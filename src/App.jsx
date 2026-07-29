@@ -1,9 +1,23 @@
+import React from 'react';
+import Header from "./components/Header";
+import About from "./components/About";
+import Services from "./components/Services"
+
 export default function App() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-950 text-white">
-      <h1 className="text-4xl font-extrabold tracking-tight text-emerald-300 drop-shadow-md">
-        initial branch commit 
-      </h1>
+    <div className="min-h-screen bg-gray-50 text-gray-800 scroll-smooth">
+      {/* Global Navbar */}
+      <Header />
+      
+      {/* Single Page Sections */}
+      <main className="w-full">
+        <section id="about">
+          <About />
+        </section>
+        <section id="services">
+          <Services />
+        </section>
+      </main>
     </div>
-  )
+  );
 }

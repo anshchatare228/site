@@ -3,7 +3,7 @@ import Logo from "../assets/logo.png"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const navItems = ['About', 'Services', 'Experience', 'Testimonials', 'Contact'];
+    const navItems = ['About', 'Services', 'Experience', 'Gallery', 'Testimonials', 'Contact'];
 
     return (
         <header className="fixed top-0 w-full bg-transparent backdrop-blur-lg text-white py-3 px-4 md:px-6 shadow-md z-50">
@@ -17,7 +17,7 @@ const Navbar = () => {
                         <h1 className="text-base md:text-2xl font-bold tracking-wide leading-tight">
                             Dr. Shubham Tungenwar
                         </h1>
-                        <p className="text-[11px] md:text-xs text-green-700 font-semibold tracking-wide">
+                        <p className="text-[11px] md:text-xs text-green-500 font-semibold tracking-wide">
                             Robotic Joint Replacement & Sports Injury Specialist
                         </p>
                     </div>

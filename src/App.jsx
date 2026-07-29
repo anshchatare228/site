@@ -4,6 +4,9 @@ import About from "./components/About";
 import Services from "./components/Services"
 import Experience from "./components/Experience"
 import Results from "./components/Results"
+import Testimonials from "./components/Testimonials"
+import Contact from "./components/Contact"
+import Footer from "./components/Footer"
 
 export default function App() {
   return (
@@ -13,7 +16,7 @@ export default function App() {
       
       {/* Single Page Sections */}
       <main className="w-full">
-        
+
         <section id="about">
           <About />
         </section>
@@ -26,8 +29,20 @@ export default function App() {
           <Experience />
         </section>
 
-        <section id="experience">
+        <section id="results">
           <Results />
+        </section>
+
+        <section id="testimonials">
+          <Testimonials />
+        </section>
+
+        <section id="contact">
+          <Contact />
+        </section>
+
+        <section id="footer">
+          <Footer />
         </section>
 
       </main>

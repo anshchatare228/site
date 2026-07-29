@@ -6,7 +6,7 @@ const Navbar = () => {
     const navItems = ['About', 'Services', 'Experience', 'Testimonials', 'Contact'];
 
     return (
-        <header className="fixed top-0 w-full bg-transparent backdrop-blur-lg text-white py-3 px-4 md:px-6 z-50">
+        <header className="fixed top-0 w-full bg-transparent backdrop-blur-lg text-white py-3 px-4 md:px-6 shadow-md z-50">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 {/* Left Section: Logo & Doctor Info */}
                 <div className="flex items-center gap-3 md:gap-4">
@@ -14,11 +14,11 @@ const Navbar = () => {
                         <img src={Logo} alt="Shree Venkateshwara Logo" className="h-5 lg:h-12 w-auto object-contain" />
                     </div>
                     <div className="flex flex-col justify-center">
-                        <h1 className="text-base md:text-lg font-bold tracking-wide leading-tight">
+                        <h1 className="text-base md:text-2xl font-bold tracking-wide leading-tight">
                             Dr. Shubham Tungenwar
                         </h1>
-                        <p className="text-[11px] md:text-xs text-[#00c853] font-semibold tracking-wide">
-                            Robotic Orthopaedic Surgeon
+                        <p className="text-[11px] md:text-xs text-green-700 font-semibold tracking-wide">
+                            Robotic Joint Replacement & Sports Injury Specialist
                         </p>
                     </div>
                 </div>
@@ -31,16 +31,16 @@ const Navbar = () => {
                             <a
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
-                                className="group relative text-sm font-medium opacity-90 hover:opacity-100 transition-opacity py-1"
+                                className="group relative text-md font-medium opacity-90 hover:opacity-100 transition-opacity py-1"
                             >
                                 {item}
                                 {/* Animated Underline */}
-                                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#00c853] transition-all duration-300 group-hover:w-full" />
+                                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-green-500 transition-all duration-300 group-hover:w-full" />
                             </a>
                         ))}
                     </nav>
 
-                    <button className="hidden sm:flex items-center gap-2 bg-[#00a859] hover:bg-[#008f4c] text-white text-sm font-semibold py-2 px-5 rounded-full transition-all shadow-sm">
+                    <button className="hidden sm:flex items-center gap-2 bg-green-700 hover:bg-[#008f4c] text-white text-sm font-semibold py-2 px-5 rounded-full transition-all shadow-sm cursor-pointer">
                         <span className="h-2 w-2 rounded-full bg-white animate-pulse"></span> Book Appointment
                     </button>
 
@@ -69,7 +69,7 @@ const Navbar = () => {
                                 key={item}
                                 href={`#${item.toLowerCase()}`}
                                 onClick={() => setIsOpen(false)}
-                                className="text-base font-medium py-1 hover:text-[#00c853] transition-colors border-b border-white/5 last:border-0"
+                                className="text-base font-medium py-1 hover:text-green-700 transition-colors border-b border-white/5 last:border-0"
                             >
                                 {item}
                             </a>

@@ -7,7 +7,7 @@ export default function About() {
     const medicalBadges = ['MBBS', 'MS Ortho', 'DNB Ortho', 'MNAMS', 'MCh (Liverpool, UK)'];
 
     return (
-        <section className="w-full bg-gradient-to-br from-[#0f53c0] to-[#10b3a8] text-white py-10 px-4 sm:px-6 md:py-20">
+        <section className="w-full bg-gradient-to-br from-[#0c4095] to-[#1a877f] text-white py-10 px-4 sm:px-6 md:py-20">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-10">
 
                 {/* Right side*/}
@@ -34,9 +34,9 @@ export default function About() {
                             <p className="text-[13px] text-white/70">
                                 MBBS · MS Ortho · DNB · MNAMS · MCh (Liverpool, UK)
                             </p>
-                            <div className="flex items-center gap-1 text-[11px] text-[#00c853] font-bold">
-                                <span className="h-1.5 w-1.5 rounded-full bg-[#00c853]"></span>
-                                Robotic Orthopaedic Surgeon
+                            <div className="flex items-center gap-1 text-[11px] text-green-600 font-bold">
+                                <span className="h-1.5 w-1.5 rounded-full bg-green-600"></span>
+                                Robotic Joint Replacement & Sports Injury Specialist
                             </div>
                             <div className="flex items-center gap-1 text-xs pt-1">
                                 <span className="text-yellow-400">⭐⭐⭐⭐⭐</span>
@@ -52,15 +52,15 @@ export default function About() {
                 <div className="lg:col-span-7 flex flex-col space-y-6 lg:order-first">
 
                     <div className="flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-[#00c853]"></span>
+                        <span className="h-2 w-2 rounded-full bg-green-600"></span>
                         <span className="text-xs font-semibold tracking-widest uppercase opacity-95">
                             Consultant Orthopaedic Surgeon • Nanded
                         </span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-none">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-none font-['roboto']">
                         Dr Shubham R <br />
-                        <span className="text-[#00c853]">Tungenwar</span>
+                        <span className="text-green-600">Tungenwar</span>
                     </h1>
 
                     <div className="space-y-1">
@@ -87,7 +87,7 @@ export default function About() {
                     </div>
 
                     <p className="text-base sm:text-lg opacity-90 leading-relaxed font-normal max-w-2xl pt-2">
-                        Fellowship-trained Robotic Orthopaedic Surgeon from Liverpool, UK — specialising in Hip & Knee Replacement, Robotic Surgery, Arthroscopy, and Complex Trauma. Bringing world-class UK precision to Nanded, Maharashtra.
+                        Fellowship-trained Robotic Orthopaedic Surgeon from Liverpool, UK — specialising in Hip & Knee Replacement, Robotic Surgery, Arthroscopy, and Complex Trauma. Bringing world-class Orthopaedic care to Nanded, Maharashtra.
                     </p>
 
                     {/* Action/Contact Call-To-Action Buttons */}
@@ -102,7 +102,7 @@ export default function About() {
                             href="https://wa.me"
                             target="_blank"
                             rel="noreferrer"
-                            className="flex items-center gap-2 bg-[#00c853] text-white font-bold text-sm px-6 py-3 rounded-xl hover:bg-opacity-95 transition-all shadow-md"
+                            className="flex items-center gap-2 bg-green-600 text-white font-bold text-sm px-6 py-3 rounded-xl hover:bg-opacity-95 transition-all shadow-md"
                         >
                             <MessageSquareDot/> WhatsApp
                         </a>
@@ -114,16 +114,12 @@ export default function About() {
                     {/* Professional Milestone Statistics Footer */}
                     <div className="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 max-w-md">
                         <div>
-                            <p className="text-2xl sm:text-3xl font-extrabold tracking-tight">2000+</p>
+                            <p className="text-2xl sm:text-3xl font-extrabold tracking-tight">1000+</p>
                             <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/60">Surgeries</p>
                         </div>
                         <div>
                             <p className="text-2xl sm:text-3xl font-extrabold tracking-tight">10+</p>
                             <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/60">Years Exp.</p>
-                        </div>
-                        <div>
-                            <p className="text-2xl sm:text-3xl font-extrabold tracking-tight">MCh UK</p>
-                            <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/60">Qualified</p>
                         </div>
                     </div>
 

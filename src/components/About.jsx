@@ -153,34 +153,37 @@ export default function About() {
                     {/* Action/Contact Call-To-Action Buttons */}
                     <div className="flex flex-col lg:flex-row gap-4 pt-4">
                         <a
-                            href="tel:+1234567890"
-                            className="flex items-center gap-2 bg-white text-[#1b5093] font-bold text-sm px-6 py-3 rounded-xl hover:bg-opacity-95 transition-all shadow-md"
+                            href="tel:+919172000604"
+                            className="flex items-center gap-2 bg-white text-[#1b5093] font-bold text-sm px-6 py-3 rounded-xl hover:scale-105 hover:bg-opacity-95 transition-all shadow-md duration-300"
                         >
                             <PhoneCall /> {t.callNow}
                         </a>
                         <a
-                            href="https://wa.me"
+                            href="https://wa.me/919172000604"
                             target="_blank"
                             rel="noreferrer"
-                            className="flex items-center gap-2 bg-green-600 text-white font-bold text-sm px-6 py-3 rounded-xl hover:bg-opacity-95 transition-all shadow-md"
+                            className="flex items-center gap-2 bg-green-600 text-white font-bold text-sm px-6 py-3 hover:scale-105 rounded-xl hover:bg-opacity-95 transition-all shadow-md duration-300"
                         >
                             <MessageSquareDot /> {t.whatsapp}
                         </a>
-                        <button className="flex items-center gap-2 bg-transparent border border-white/30 text-white font-semibold text-sm px-6 py-3 rounded-xl hover:bg-white/5 transition-all">
+                        <button className="flex items-center gap-2 bg-transparent border border-white/30 text-white hover:scale-105 font-semibold text-sm px-6 py-3 rounded-xl hover:bg-white/5 transition-all duration-300">
                             <Calendar /> {t.appointment}
                         </button>
                     </div>
 
-                    {/* Professional Milestone Statistics Footer */}
-                    <div className="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 max-w-md">
-                        <div>
-                            <p className="text-2xl sm:text-3xl font-extrabold tracking-tight">1000+</p>
-                            <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/60">{t.surgeries}</p>
+                    <div className='w-full flex justify-center items-center'>
+                        {/* Professional Milestone Statistics Footer */}
+                        <div className="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 max-w-md">
+                            <div>
+                                <p className="text-4xl sm:text-3xl font-extrabold tracking-tight">1000+</p>
+                                <p className="text-[13px] sm:text-xs font-bold uppercase tracking-wider text-white/60">{t.surgeries}</p>
+                            </div>
+                            <div>
+                                <p className="text-4xl sm:text-3xl font-extrabold tracking-tight">10+</p>
+                                <p className="text-[13px] sm:text-xs font-bold uppercase tracking-wider text-white/60">{t.yearsExp}</p>
+                            </div>
                         </div>
-                        <div>
-                            <p className="text-2xl sm:text-3xl font-extrabold tracking-tight">10+</p>
-                            <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/60">{t.yearsExp}</p>
-                        </div>
+
                     </div>
 
                 </div>

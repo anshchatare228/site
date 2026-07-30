@@ -36,7 +36,7 @@ export default function Results() {
       </div>
 
       {/* Numerical statistics metric matrix */}
-      <div className="max-w-7xl flex justify-center gap-10">
+      <div className="max-w-7xl flex flex-col lg:flex-row justify-center gap-10">
         {stats.map((stat, idx) => (
           <div 
             key={idx} 

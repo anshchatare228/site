@@ -1,0 +1,191 @@
+import React, { useState } from 'react';
+
+import DocPhoto from "../assets/docPhoto.png"
+import { MessageSquareDot, PhoneCall, Calendar, Languages } from 'lucide-react';
+
+export default function About() {
+    const [lang, setLang] = useState('en'); // 'en' | 'mr'
+
+    const content = {
+        en: {
+            eyebrow: 'Consultant Orthopaedic Surgeon • Nanded',
+            nameLine1: 'Dr Shubham R',
+            nameLine2: 'Tungenwar',
+            title: 'Consultant Trauma & Orthopaedic Surgeon',
+            subtitle: 'Specialist in Arthroscopy & Joint Replacement Surgery',
+            registration: 'GMC Registered (UK) | MMC Reg No: 2019/04/2112',
+            description: 'Fellowship-trained Robotic Orthopaedic Surgeon from Liverpool, UK — specialising in Hip & Knee Replacement, Robotic Surgery, Arthroscopy, and Complex Trauma. Bringing world-class Orthopaedic care to Nanded, Maharashtra.',
+            callNow: 'Call Now',
+            whatsapp: 'WhatsApp',
+            appointment: 'Appointment',
+            surgeries: 'Surgeries',
+            yearsExp: 'Years Exp.',
+            locationTag: '📍 Nanded, MH',
+            cardName: 'Dr. Shubham R. Tungenwar',
+            cardBadges: 'MBBS · MS Ortho · DNB · MNAMS · MCh (Liverpool, UK)',
+            cardSpecialist: 'Robotic Joint Replacement & Sports Injury Specialist',
+            rating: 'Rating',
+            translateLabel: 'मराठीत वाचा',
+        },
+        mr: {
+            eyebrow: 'सल्लागार अस्थिव्यंग शल्यचिकित्सक • नांदेड',
+            nameLine1: 'डॉ शुभम आर',
+            nameLine2: 'तुंगेणवार',
+            title: 'सल्लागार ट्रॉमा आणि अस्थिव्यंग शल्यचिकित्सक',
+            subtitle: 'आर्थ्रोस्कोपी आणि सांधे प्रत्यारोपण शस्त्रक्रियेतील तज्ज्ञ',
+            registration: 'GMC नोंदणीकृत (यूके) | MMC नोंदणी क्रमांक: 2019/04/2112',
+            description: 'लिव्हरपूल, यूके येथून फेलोशिप-प्रशिक्षित रोबोटिक अस्थिव्यंग शल्यचिकित्सक — हिप आणि गुडघा प्रत्यारोपण, रोबोटिक शस्त्रक्रिया, आर्थ्रोस्कोपी आणि गुंतागुंतीच्या ट्रॉमा उपचारात विशेष प्राविण्य. नांदेड, महाराष्ट्रात जागतिक दर्जाची अस्थिव्यंग काळजी उपलब्ध करून देत आहोत.',
+            callNow: 'आता कॉल करा',
+            whatsapp: 'व्हॉट्सअ‍ॅप',
+            appointment: 'अपॉइंटमेंट',
+            surgeries: 'शस्त्रक्रिया',
+            yearsExp: 'वर्षांचा अनुभव',
+            locationTag: '📍 नांदेड, महाराष्ट्र',
+            cardName: 'डॉ शुभम आर तुंगेणवार',
+            cardBadges: 'MBBS · MS Ortho · DNB · MNAMS · MCh (लिव्हरपूल, यूके)',
+            cardSpecialist: 'रोबोटिक सांधे प्रत्यारोपण आणि क्रीडा दुखापत तज्ज्ञ',
+            rating: 'रेटिंग',
+            translateLabel: 'Read in English',
+        },
+    };
+
+    const t = content[lang];
+
+    // Degree abbreviations are kept as-is in both languages (standard practice)
+    const medicalBadges = ['MBBS', 'MS Ortho', 'DNB Ortho', 'MNAMS', 'MCh (Liverpool, UK)'];
+
+    return (
+        <section className="w-full bg-gradient-to-br from-[#0c4095] to-[#1a877f] text-white py-18 px-4 sm:px-6 md:py-20">
+
+            <button
+                onClick={() => setLang(lang === 'en' ? 'mr' : 'en')}
+                className="absolute right-5 mt-5 lg:right-40 lg:top-20 flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full transition-all"
+            >
+                <Languages size={16} />
+                {t.translateLabel}
+            </button>
+
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-10">
+
+                {/* Right side*/}
+                <div className="lg:col-span-5 flex flex-col items-center relative w-full lg:order-last mt-7 lg:mt-0">
+
+                    {/* Translate Toggle Button — sits just above the photo */}
+
+                    <div className="relative w-full max-w-[380px] lg:scale-125 aspect-[4/5] rounded-[2.5rem] overflow-hidden  shadow-2xl group">
+
+                        {/* Image Placeholder Block */}
+                        <div className="absolute inset-0 flex items-center justify-center bg-slate-800/40 text-white/40 text-sm font-medium z-0">
+                            <span>
+                                <img src={DocPhoto} alt="" />
+                            </span>
+                        </div>
+
+                        {/* Top Location Tag Badge Overlay */}
+                        <div className="absolute top-4 right-4 bg-black/30 backdrop-blur-md text-white text-[11px] font-semibold py-1 px-3 rounded-full flex items-center gap-1 z-10">
+                            {t.locationTag}
+                        </div>
+
+                        {/* Bottom Floating Info Summary Panel Overlay */}
+                        <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 pt-20 flex flex-col space-y-1.5 z-10">
+                            <h3 className="text-xl sm:text-xl font-bold tracking-wide">
+                                {t.cardName}
+                            </h3>
+                            <p className="text-[13px] text-white/70">
+                                {t.cardBadges}
+                            </p>
+                            <div className="flex items-center gap-1 text-[11px] text-green-600 font-bold">
+                                <span className="h-1.5 w-1.5 rounded-full bg-green-600"></span>
+                                {t.cardSpecialist}
+                            </div>
+                            <div className="flex items-center gap-1 text-xs pt-1">
+                                <span className="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                                <span className="font-bold pl-1">5.0</span>
+                                <span className="text-white/60 text-[11px]">{t.rating}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                {/* Left Side */}
+                <div className="lg:col-span-7 flex flex-col space-y-6 lg:order-first">
+
+                    <div className="flex items-center gap-2">
+                        <span className="h-2 w-2 rounded-full bg-green-600"></span>
+                        <span className="text-xs font-semibold tracking-widest uppercase opacity-95">
+                            {t.eyebrow}
+                        </span>
+                    </div>
+
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-none font-['roboto']">
+                        {t.nameLine1} <br />
+                        <span className="text-green-600">{t.nameLine2}</span>
+                    </h1>
+
+                    <div className="space-y-1">
+                        <p className="text-lg font-bold tracking-wide">
+                            {t.title}
+                        </p>
+                        <p className="text-sm font-medium opacity-85">
+                            {t.subtitle}
+                        </p>
+                        <p className="text-xs text-white/60 pt-1">
+                            {t.registration}
+                        </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 pt-2">
+                        {medicalBadges.map((badge, index) => (
+                            <span
+                                key={index}
+                                className="bg-white/10 text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/10 backdrop-blur-sm"
+                            >
+                                {badge}
+                            </span>
+                        ))}
+                    </div>
+
+                    <p className="text-base sm:text-lg opacity-90 leading-relaxed font-normal max-w-2xl pt-2">
+                        {t.description}
+                    </p>
+
+                    {/* Action/Contact Call-To-Action Buttons */}
+                    <div className="flex flex-col lg:flex-row gap-4 pt-4">
+                        <a
+                            href="tel:+1234567890"
+                            className="flex items-center gap-2 bg-white text-[#1b5093] font-bold text-sm px-6 py-3 rounded-xl hover:bg-opacity-95 transition-all shadow-md"
+                        >
+                            <PhoneCall /> {t.callNow}
+                        </a>
+                        <a
+                            href="https://wa.me"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-center gap-2 bg-green-600 text-white font-bold text-sm px-6 py-3 rounded-xl hover:bg-opacity-95 transition-all shadow-md"
+                        >
+                            <MessageSquareDot /> {t.whatsapp}
+                        </a>
+                        <button className="flex items-center gap-2 bg-transparent border border-white/30 text-white font-semibold text-sm px-6 py-3 rounded-xl hover:bg-white/5 transition-all">
+                            <Calendar /> {t.appointment}
+                        </button>
+                    </div>
+
+                    {/* Professional Milestone Statistics Footer */}
+                    <div className="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 max-w-md">
+                        <div>
+                            <p className="text-2xl sm:text-3xl font-extrabold tracking-tight">1000+</p>
+                            <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/60">{t.surgeries}</p>
+                        </div>
+                        <div>
+                            <p className="text-2xl sm:text-3xl font-extrabold tracking-tight">10+</p>
+                            <p className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-white/60">{t.yearsExp}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    );
+};

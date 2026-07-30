@@ -34,7 +34,7 @@ const Navbar = () => {
   // Dynamic style tokens based on scroll position
   const theme = {
     header: isScrolledPastHero 
-      ? "bg-white/80 text-gray-900 border-b border-gray-200" 
+      ? "bg-white/50 text-gray-900 border-b border-gray-200" 
       : "bg-transparent text-white",
     title: isScrolledPastHero ? "text-gray-900" : "text-white",
     links: isScrolledPastHero ? "text-gray-700 hover:text-green-600" : "text-white/90 hover:text-white",
@@ -52,7 +52,7 @@ const Navbar = () => {
           </div>
           <div className="flex flex-col justify-center">
             <h1 className={`text-base md:text-2xl font-bold tracking-wide leading-tight transition-colors duration-300 ${theme.title}`}>
-              Dr. Shubham Tungenwar
+              Dr Shubham Tungenwar
             </h1>
             <p className="text-[11px] md:text-xs text-green-600 font-semibold tracking-wide">
               Robotic Joint Replacement & Sports Injury Specialist
@@ -79,10 +79,10 @@ const Navbar = () => {
           </nav>
 
           {/* Desktop CTA Button */}
-          <button className="hidden sm:flex items-center gap-2 bg-green-700 hover:bg-green-600 text-white text-sm font-semibold py-2 px-5 rounded-full transition-all shadow-sm cursor-pointer">
+          <a href='#contact' className="hidden sm:flex items-center gap-2 bg-green-700 hover:bg-green-600 text-white text-sm font-semibold py-2 px-5 rounded-full transition-all shadow-sm cursor-pointer">
             <span className="h-2 w-2 rounded-full bg-white animate-pulse"></span>
             Book Appointment
-          </button>
+          </a>
 
           {/* Hamburger Menu Toggle Button */}
           <button 
@@ -116,10 +116,10 @@ const Navbar = () => {
           </nav>
           
           {/* Mobile CTA */}
-          <button className="sm:hidden w-full flex items-center justify-center gap-2 bg-[#00a859] hover:bg-[#008f4c] text-white text-sm font-semibold py-2.5 px-5 rounded-full transition-all shadow-sm mt-2">
+          <a href="#contact" className="sm:hidden w-full flex items-center justify-center gap-2 bg-[#00a859] hover:bg-[#008f4c] text-white text-sm font-semibold py-2.5 px-5 rounded-full transition-all shadow-sm mt-2">
             <span className="h-2 w-2 rounded-full bg-white animate-pulse"></span>
             Book Appointment
-          </button>
+          </a>
         </div>
       </div>
     </header>

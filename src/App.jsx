@@ -7,7 +7,9 @@ import Results from "./components/Results";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Gallery from "./pages/Gallery"; // Import your new page
+import Gallery from "./pages/Gallery";
+import ScrollReveal from './components/scrollReveal';
+import { Scroll } from 'lucide-react';
 
 export default function App() {
   const [currentView, setCurrentView] = useState('home');
@@ -30,42 +32,52 @@ export default function App() {
 
   // Show Gallery Page view
   if (currentView === 'gallery') {
-    return <Gallery/>;
+    return <Gallery />;
   }
 
   // Otherwise show the default single page website layout
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 scroll-smooth">
       <Header />
+
       <main className="w-full">
-        <section id="about">
-          <About />
-        </section>
 
-        <section id="services">
-          <Services />
-        </section>
+          <section id="about">
+            <About />
+          </section>
 
-        <section id="experience">
-          <Experience />
-        </section>
+        <ScrollReveal>
+          <section id="services">
+            <Services />
+          </section>
+        </ScrollReveal>
 
-        <section id="results">
-          <Results />
-        </section>
+          <section id="experience">
+            <Experience />
+          </section>
 
-        <section id="testimonials">
-          <Testimonials />
-        </section>
+        <ScrollReveal>
+          <section id="results">
+            <Results />
+          </section>
+        </ScrollReveal>
 
-        <section id="contact">
-          <Contact />
-        </section>
+        <ScrollReveal>
+          <section id="testimonials">
+            <Testimonials />
+          </section>
+        </ScrollReveal>
 
-        <section id="footer">
-          <Footer />
-        </section>
+        <ScrollReveal>
+          <section id="contact">
+            <Contact />
+          </section>
+        </ScrollReveal>
       </main>
+
+      <section id="footer">
+        <Footer />
+      </section>
     </div>
   );
 }

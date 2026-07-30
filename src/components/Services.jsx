@@ -1,5 +1,5 @@
 import React from 'react';
-import {Scissors, Activity, Flame, MoveVertical, Cpu, Calendar, PenTool} from 'lucide-react'
+import { Scissors, Activity, Flame, MoveVertical, Cpu, Calendar, PenTool } from 'lucide-react'
 
 export default function Services() {
     return (
@@ -9,7 +9,7 @@ export default function Services() {
                 {/* Top Tag & Main Header */}
                 <div className="text-center mb-12">
                     <div className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-600 text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full mb-4 border border-blue-100">
-                        <span> <PenTool size={17}/> </span>
+                        <span> <PenTool size={17} /> </span>
                         <span>Specialisations</span>
                     </div>
                     <h1 className="text-3xl sm:text-4xl font-serif text-slate-900 mb-3 tracking-wide">
@@ -76,7 +76,7 @@ export default function Services() {
                                     <h3 className="text-lg font-bold text-slate-900">Sports Medicine</h3>
                                 </div>
                                 <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
-                                    ACL reconstruction, ACL reconstruction, meniscus repair, and shoulder stabilisation for athletes and non athletes of all levels.
+                                    ACL reconstruction, PCL reconstruction, meniscus repair, and shoulder stabilisation for athletes and non athletes of all levels.
                                 </p>
                             </div>
                             <div className="flex flex-wrap gap-2">
@@ -94,10 +94,10 @@ export default function Services() {
                                             <MoveVertical className="w-5 h-5" />
                                         </span>
                                     </div>
-                                    <h3 className="text-lg font-bold text-slate-900">Spine Surgery</h3>
+                                    <h3 className="text-lg font-bold text-slate-900">PRP injections</h3>
                                 </div>
                                 <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
-                                    Minimally invasive spine procedures for disc herniation, spinal stenosis, and deformity correction.
+                                    Regenerative treatments using Platelet-Rich Plasma (PRP) injections to accelerate healing, restore joint function for arthritis, tendonitis, and sports injuries.
                                 </p>
                             </div>
                             <div className="flex flex-wrap gap-2">
@@ -135,10 +135,10 @@ export default function Services() {
                             </ul>
                         </div>
 
-                        <button className="w-full bg-white text-slate-900 font-semibold text-sm py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-teal-50 transition active:scale-[0.98]">
+                        <a href='#contact' className="w-full bg-white text-slate-900 font-semibold text-sm py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-black/70 hover:text-white duration-500 transition active:scale-[0.98]">
                             <Calendar className="w-4 h-4" />
                             Book Robotic Surgery Consult
-                        </button>
+                        </a>
                     </div>
 
                 </div>

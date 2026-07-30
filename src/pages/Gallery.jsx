@@ -73,24 +73,24 @@ const GalleryPage = () => {
       id: 6,
       type: 'image',
       category: 'educational',
-      title: 'Stages of Osteoarthritis Breakdown',
-      desc: 'Visual chart illustrating the progressive deterioration of joint spaces.',
+      title: 'Avascular Necrosis Breakdown',
+      desc: 'Visual chart illustrating the progressive death of bone tissue in the hip due to lack of blood supply.',
       src: google2, // Replace with your Google pics / charts
     },
     {
       id: 7,
       type: 'image',
       category: 'educational',
-      title: 'Stages of Osteoarthritis Breakdown',
-      desc: 'Visual chart illustrating the progressive deterioration of joint spaces.',
+      title: 'Radiographic Evaluation of the Femoral Head',
+      desc: 'X-ray imagery showing advanced structural degradation and flattening of the hip joint.',
       src: google3, // Replace with your Google pics / charts
     },
     {
       id: 8,
       type: 'image',
       category: 'educational',
-      title: 'Stages of Osteoarthritis Breakdown',
-      desc: 'Visual chart illustrating the progressive deterioration of joint spaces.',
+      title: 'Total Hip Arthroplasty Components',
+      desc: 'Exploded anatomical diagram showcasing the plastic liner, femoral head, and femoral stem assembly.',
       src: google4, // Replace with your Google pics / charts
     },
     {

@@ -98,10 +98,6 @@ export default function Experience() {
                     <GraduationCap className="w-4 h-4 text-blue-600" />
                     EDUCATION & CREDENTIALS
                 </button>
-                <div className="flex bg-slate-200 p-1 rounded-full text-xs font-semibold">
-                    <button className="bg-blue-600 text-white px-4 py-1.5 rounded-full shadow-sm">English</button>
-                    <button className="text-slate-600 px-4 py-1.5 rounded-full hover:text-slate-900 transition">मराठी</button>
-                </div>
             </div>
 
             {/* Main Title */}

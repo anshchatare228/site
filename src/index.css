@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  /* Optional: Prevents header from covering section content titles */
+  scroll-padding-top: 80px; 
+}

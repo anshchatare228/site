@@ -85,10 +85,10 @@ export default function Testimonial() {
                         className="w-full h-full object-cover"
                     />
                     {/* Tag Overlay Label */}
-                    <div className="absolute bottom-4 left-4 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 text-white text-xs font-medium border border-white/20">
+                    {/* <div className="absolute bottom-4 left-4 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 text-white text-xs font-medium border border-white/20">
                         <Scissors className="w-3.5 h-3.5 transform rotate-90 text-white" />
                         {current.tag}
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Right Side: Informational Context Body Block */}

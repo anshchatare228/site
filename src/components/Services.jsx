@@ -8,10 +8,10 @@ export default function Services() {
 
                 {/* Top Tag & Main Header */}
                 <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-600 text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full mb-4 border border-blue-100">
+                    {/* <div className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-600 text-xs font-semibold tracking-wider uppercase px-3 py-1 rounded-full mb-4 border border-blue-100">
                         <span> <PenTool size={17} /> </span>
                         <span>Specialisations</span>
-                    </div>
+                    </div> */}
                     <h1 className="text-3xl sm:text-4xl font-serif text-slate-900 mb-3 tracking-wide">
                         Advanced Orthopaedic Care
                     </h1>
@@ -35,7 +35,7 @@ export default function Services() {
                                     </div>
                                     <h3 className="text-lg font-bold text-slate-900">Robotic Knee Replacement</h3>
                                 </div>
-                                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                                <p className="text-xs sm:text-sm text-black/80 leading-relaxed mb-6">
                                     Total and partial knee replacement using robotic-assisted precision for optimal implant alignment and faster recovery.
                                 </p>
                             </div>
@@ -55,7 +55,7 @@ export default function Services() {
                                     </div>
                                     <h3 className="text-lg font-bold text-slate-900">Hip Replacement</h3>
                                 </div>
-                                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                                <p className="text-xs sm:text-sm text-black/80 leading-relaxed mb-6">
                                     Anterior and posterior approach hip replacements with computer navigation for accurate positioning.
                                 </p>
                             </div>
@@ -75,7 +75,7 @@ export default function Services() {
                                     </div>
                                     <h3 className="text-lg font-bold text-slate-900">Sports Medicine</h3>
                                 </div>
-                                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                                <p className="text-xs sm:text-sm text-black/80 leading-relaxed mb-6">
                                     ACL reconstruction, PCL reconstruction, meniscus repair, and shoulder stabilisation for athletes and non athletes of all levels.
                                 </p>
                             </div>
@@ -96,7 +96,7 @@ export default function Services() {
                                     </div>
                                     <h3 className="text-lg font-bold text-slate-900">PRP injections</h3>
                                 </div>
-                                <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+                                <p className="text-xs sm:text-sm text-black/80 leading-relaxed mb-6">
                                     Regenerative treatments using Platelet-Rich Plasma (PRP) injections to accelerate healing, restore joint function for arthritis, tendonitis, and sports injuries.
                                 </p>
                             </div>
@@ -114,7 +114,7 @@ export default function Services() {
                                 <Cpu className="w-4 h-4" />
                                 <span className="text-xs font-semibold tracking-widest uppercase">Signature Procedure</span>
                             </div>
-                            <h3 className="text-2xl font-bold mb-3">Robotic Knee Replacement Surgery</h3>
+                            <h3 className="text-2xl font-bold mb-3 font-['roboto']">Robotic Knee Replacement Surgery</h3>
                             <p className="text-xs sm:text-sm text-teal-100 leading-relaxed mb-6">
                                 State-of-the-art robotic orthopaedic surgery for unmatched precision in joint replacement procedures using cori surgical system. Sub-millimetre accuracy reduces revision rates by up to 40%.
                             </p>

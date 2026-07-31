@@ -9,7 +9,7 @@ export default function Testimonial() {
     // Array containing dummy image paths alongside data matching the current UI state
     const testimonials = [
         {
-            quote: "After years of unbearable knee pain, Dr. Tungenwar's robotic surgery gave me my life back. I was walking without support within 3 days. Exceptional care and precision.",
+            quote: "My mother recently underwent a left total hip replacement by Dr. Shubham Tungenwar and we had an excellent experience. She was walking within 24 hours, and her pain was very well managed. A special thanks to Dr. Shubham Tungenwar for being so professional and reassuring throughout.",
             name: "Ramesh Kulkarni",
             location: "Nanded, Maharashtra",
             tag: "Robotic Knee Replacement",
@@ -17,7 +17,7 @@ export default function Testimonial() {
             mainImg: Test1
         },
         {
-            quote: "I travelled from Latur specifically for Dr. Tungenwar. His UK training is evident in every detail of care. No other surgeon in Marathwada has this level of expertise.",
+            quote: "Dr. Shubham’s expertise in arthroscopy is impressive. He performed my meniscus surgery with precision and care. I appreciated how he walked me through the entire process. The positive environment in the clinic really helped ease my nerves.",
             name: "Sunita Deshmukh",
             location: "Latur, Maharashtra",
             tag: "Hip Replacement Surgery",
@@ -25,7 +25,7 @@ export default function Testimonial() {
             mainImg: Test2
         },
         {
-            quote: "As a cricket player, ACL injury felt career-ending. Dr. Tungenwar's arthroscopic surgery and rehabilitation plan got me back on the field in 6 months. Incredible outcome.",
+            quote: "I received treatment for my shoulder injury, and I was very happy with the care I received. Dr. Shubham Tungenwar took the time to explain everything in detail. The staff were friendly and made the experience much more enjoyable.",
             name: "Prashant Pawar",
             location: "Aurangabad, Maharashtra",
             tag: "ACL Reconstruction",
@@ -33,7 +33,7 @@ export default function Testimonial() {
             mainImg: Test3
         },
         {
-            quote: "The minimally invasive approach meant I had a small scar and was discharged the same day. Dr. Tungenwar explained everything clearly. I felt safe throughout.",
+            quote: "My recovery after the hip replacement has been surprisingly fast. The doctor’s expertise was evident, and the care was top-notch.",
             name: "Meena Shinde",
             location: "Nanded, Maharashtra",
             tag: "Partial Knee Replacement",
@@ -102,7 +102,7 @@ export default function Testimonial() {
                         </div>
 
                         {/* Core Testimonial Quote Field */}
-                        <p className="text-slate-700 text-sm md:text-xl font-medium leading-relaxed mb-6">
+                        <p className="text-slate-700 text-sm md:text-[17px] font-medium leading-relaxed mb-6">
                             "{current.quote}"
                         </p>
                     </div>

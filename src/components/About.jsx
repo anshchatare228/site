@@ -166,9 +166,9 @@ export default function About() {
                         >
                             <MessageSquareDot /> {t.whatsapp}
                         </a>
-                        <button className="flex items-center gap-2 bg-transparent border border-white/30 text-white hover:scale-105 font-semibold text-sm px-6 py-3 rounded-xl hover:bg-white/5 transition-all duration-300">
+                        <a href='#contact' className="flex items-center gap-2 bg-transparent border border-white/30 text-white hover:scale-105 font-semibold text-sm px-6 py-3 rounded-xl hover:bg-white/5 transition-all duration-300">
                             <Calendar /> {t.appointment}
-                        </button>
+                        </a>
                     </div>
 
                     <div className='w-full flex justify-center items-center'>

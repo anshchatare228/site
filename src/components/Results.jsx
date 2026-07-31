@@ -40,27 +40,30 @@ export default function Results() {
         {stats.map((stat, idx) => (
           <div 
             key={idx} 
-            className="bg-white rounded-3xl p-8 flex flex-col items-center text-center shadow-lg transition-transform hover:-translate-y-1 duration-300"
+            className="bg-white rounded-3xl p-8 flex flex-col items-center text-center shadow-lg transition-all duration-300 group"
           >
             {/* Visual Icon Container */}
-            <div className="mb-4 p-1">
+            <div className="mb-4 p-1 group-hover:scale-80 duration-300">
               {stat.icon}
             </div>
 
             {/* Core Metrics */}
-            <div className="text-slate-900 font-bold text-4xl md:text-5xl tracking-tight mb-2">
+            <div className="text-slate-900 font-bold text-4xl md:text-5xl tracking-tight mb-2 group-hover:scale-130 duration-300">
               {stat.number}
             </div>
+            
+            <div className='group-hover:scale-80 duration-300'>
+              {/* Decoded Metadata Label */}
+              <div className="text-slate-800 font-bold text-sm md:text-base mb-1">
+                {stat.label}
+              </div>
 
-            {/* Decoded Metadata Label */}
-            <div className="text-slate-800 font-bold text-sm md:text-base mb-1">
-              {stat.label}
+              {/* Subtle Auxiliary Subtext */}
+              <div className="text-slate-400 text-xs md:text-sm font-medium leading-snug ">
+                {stat.subtext}
+              </div>
             </div>
 
-            {/* Subtle Auxiliary Subtext */}
-            <div className="text-slate-400 text-xs md:text-sm font-medium leading-snug">
-              {stat.subtext}
-            </div>
           </div>
         ))}
       </div>

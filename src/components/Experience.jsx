@@ -51,24 +51,19 @@ export default function Experience() {
             institution: "University Hospitals of Liverpool",
             location: "Liverpool, United Kingdom"
         },
-        {
-            degree: "Fellowship in Robotic Knee Replacement Surgery",
-            year: "2019",
-            institution: "Depuy VELYST™ Robotic System Training",
-            location: ""
-        }
+
     ];
 
     const recognitions = [
         {
     icon: <Trophy className="w-5 h-5 text-zinc-6   700 mt-1 flex-shrink-0" />,
     title: "SICOT 2022 – Top 10 Global Paper",
-    description: 'Rotator cuff repair paper selected Top 10 of 500+ submissions, Kuala Lumpur.'
+    description: 'Awarded International Diploma in Trauma & Orthopaedic Surgery at SICOT World Congress 2023 in Madrid, Spain for excellence in orthopaedic surgery.'
 },
 {
     icon: <Award className="w-5 h-5 text-zinc-6700 mt-1 flex-shrink-0" />,
     title: "Best Papers Session – World Congress",
-    description: 'One of only two Indian delegates selected that year.'
+    description: 'Best Papers Session – SICOT World Congress, Kuala Lampur, Malaysia 2022 One of only two Indian delegates selected that year.'
 },
 {
     icon: <Medal className="w-5 h-5 text-zinc-6700 mt-1 flex-shrink-0" />,
@@ -85,8 +80,9 @@ export default function Experience() {
     const expertises = [
         "Hip & Knee Replacement Surgery",
         "Revision Hip & Knee Replacement Surgery",
-        "Robotic Joint Replacement Surgery",
+        "Robotic knee Replacement Surgery",
         "Arthroscopic Surgery of the Knee and Shoulder",
+        "Knee preservation Surgeries - high Tibial Osteotomies",
         "Stem Cell Therapy for Avascular Necrosis (AVN) of the Hip"
     ];
 

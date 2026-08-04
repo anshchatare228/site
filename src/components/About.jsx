@@ -1,20 +1,38 @@
-import React, { useState } from 'react';
-
+import React, { useState, useRef, useEffect } from 'react';
+import SVHN from "../assets/SVHN.mp4"
 import DocPhoto from "../assets/docPhoto.png"
 import { MessageSquareDot, PhoneCall, Calendar, Languages } from 'lucide-react';
 
 export default function About() {
     const [lang, setLang] = useState('en'); // 'en' | 'mr'
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        const vid = videoRef.current;
+        if (!vid) return;
+        // React's `muted` JSX attribute isn't always applied reliably to <video>,
+        // and browsers block autoplay unless the element is actually muted —
+        // so we set it imperatively and kick off playback ourselves.
+        vid.muted = true;
+        vid.defaultMuted = true;
+        const playPromise = vid.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                // Autoplay was blocked (e.g. some mobile browsers) — no-op,
+                // video will just show its first frame instead of erroring.
+            });
+        }
+    }, []);
 
     const content = {
         en: {
-            eyebrow: 'Consultant Orthopaedic Surgeon • Nanded',
+            eyebrow: 'Robotic Joint Replacement & Sports Injury Specialist',
             nameLine1: 'Dr Shubham R',
             nameLine2: 'Tungenwar',
             title: 'Consultant Trauma & Orthopaedic Surgeon',
             subtitle: 'Specialist in Arthroscopy & Joint Replacement Surgery',
-            registration: 'GMC Registered (UK) | MMC Reg No: 2019/04/2112',
-            description: 'Fellowship-trained Robotic Orthopaedic Surgeon from Liverpool, UK — specialising in Hip & Knee Replacement, Robotic Surgery, Arthroscopy, and Complex Trauma. Bringing world-class Orthopaedic care to Nanded, Maharashtra.',
+            registration: 'GMC Registered (UK)',
+            description: 'Fellowship-trained from Liverpool, UK — specialising in Hip & Knee Replacement, Robotic Surgery, Arthroscopy & Sports Surgery, and Complex Trauma. Excellence in Orthopaedic Surgery. Trusted Care. Better Outcomes.',
             callNow: 'Call Now',
             whatsapp: 'WhatsApp',
             appointment: 'Appointment',
@@ -28,13 +46,13 @@ export default function About() {
             translateLabel: 'मराठीत वाचा',
         },
         mr: {
-            eyebrow: 'सल्लागार अस्थिव्यंग शल्यचिकित्सक • नांदेड',
+            eyebrow: 'रोबोटिक सांधे प्रत्यारोपण आणि क्रीडा दुखापत तज्ज्ञ',
             nameLine1: 'डॉ शुभम आर',
             nameLine2: 'तुंगेनवार',
             title: 'सल्लागार ट्रॉमा आणि अस्थिव्यंग शल्यचिकित्सक',
             subtitle: 'आर्थ्रोस्कोपी आणि सांधे प्रत्यारोपण शस्त्रक्रियेतील तज्ज्ञ',
-            registration: 'GMC नोंदणीकृत (यूके) | MMC नोंदणी क्रमांक: 2019/04/2112',
-            description: 'लिव्हरपूल, यूके येथून फेलोशिप-प्रशिक्षित रोबोटिक अस्थिव्यंग शल्यचिकित्सक — हिप आणि गुडघा प्रत्यारोपण, रोबोटिक शस्त्रक्रिया, आर्थ्रोस्कोपी आणि गुंतागुंतीच्या ट्रॉमा उपचारात विशेष प्राविण्य. नांदेड, महाराष्ट्रात जागतिक दर्जाची अस्थिव्यंग काळजी उपलब्ध करून देत आहोत.',
+            registration: 'GMC नोंदणीकृत (यूके)',
+            description: 'युनायटेड किंगडममधील लिव्हरपूल येथून फेलोशिपचे प्रशिक्षण घेतले असून, हिप आणि नी रिप्लेसमेंट, रोबोटिक सर्जरी, आर्थ्रोस्कोपी आणि स्पोर्ट्स सर्जरी, तसेच कॉम्प्लेक्स ट्रॉमा यांमध्ये विशेष प्राविण्य',
             callNow: 'आता कॉल करा',
             whatsapp: 'व्हॉट्सअ‍ॅप',
             appointment: 'अपॉइंटमेंट',
@@ -52,20 +70,36 @@ export default function About() {
     const t = content[lang];
 
     // Degree abbreviations are kept as-is in both languages (standard practice)
-    const medicalBadges = ['MBBS', 'MS Ortho', 'DNB Ortho', 'MNAMS', 'MCh (Liverpool, UK)'];
+    const medicalBadges = ['MBBS', 'MS Ortho', 'DNB Ortho', 'MNAMS', 'MCh (Liverpool, UK)', 'Dip SICOT(Belgium)'];
 
     return (
-        <section className="w-full bg-gradient-to-br from-[#0c4095] to-[#1a877f] text-white py-18 px-4 sm:px-6 md:py-20">
+        <section className="relative w-full text-white py-18 px-4 sm:px-6 md:py-20 overflow-hidden">
+
+            {/* Video Background Layer */}
+            <video
+                ref={videoRef}
+                src={SVHN}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+                disablePictureInPicture
+                className="absolute inset-0 w-full h-full object-cover z-0"
+            ></video>
+
+            {/* Gradient Overlay for readability/branding on top of video */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0c4095]/50 to-[#1a877f]/85 z-[1]"></div>
 
             <button
                 onClick={() => setLang(lang === 'en' ? 'mr' : 'en')}
-                className="absolute right-5 mt-5 lg:right-40 lg:top-20 flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full transition-all"
+                className="absolute right-5 mt-5 lg:right-40 lg:top-20 z-20 flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full transition-all"
             >
                 <Languages size={16} />
                 {t.translateLabel}
             </button>
 
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-10">
+            <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-10">
 
                 {/* Right side*/}
                 <div className="lg:col-span-5 flex flex-col items-center relative w-full lg:order-last mt-7 lg:mt-0">

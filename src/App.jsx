@@ -8,7 +8,7 @@ import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Gallery from "./pages/Gallery";
-import ScrollReveal from './components/scrollReveal';
+import ScrollReveal from './components/ScrollReveal';
 import { Scroll } from 'lucide-react';
 
 export default function App() {

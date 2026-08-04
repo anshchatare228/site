@@ -56,7 +56,7 @@ export default function Services() {
                                     <h3 className="text-lg font-bold text-slate-900">Hip Replacement</h3>
                                 </div>
                                 <p className="text-xs sm:text-sm text-black/80 leading-relaxed mb-6">
-                                    Anterior and posterior approach hip replacements with computer navigation for accurate positioning.
+                                     Advanced Direct Anterior and MIS Posterior approach hip replacements with computer navigation for accurate positioning.
                                 </p>
                             </div>
                             <div className="flex flex-wrap gap-2">
@@ -73,10 +73,10 @@ export default function Services() {
                                             <Flame className="w-5 h-5" />
                                         </span>
                                     </div>
-                                    <h3 className="text-lg font-bold text-slate-900">Sports Medicine</h3>
+                                    <h3 className="text-lg font-bold text-slate-900">Arthroscopic Surgery of the Knee and Shoulder</h3>
                                 </div>
                                 <p className="text-xs sm:text-sm text-black/80 leading-relaxed mb-6">
-                                    ACL reconstruction, PCL reconstruction, meniscus repair, and shoulder stabilisation for athletes and non athletes of all levels.
+                                    ACL Reconstruction, PCL reconstruction, meniscus repair, Bankart repair, rotator cuff repair, revision ACL reconstruction, and ACL avulsion repair.
                                 </p>
                             </div>
                             <div className="flex flex-wrap gap-2">
@@ -94,7 +94,7 @@ export default function Services() {
                                             <MoveVertical className="w-5 h-5" />
                                         </span>
                                     </div>
-                                    <h3 className="text-lg font-bold text-slate-900">PRP injections</h3>
+                                    <h3 className="text-lg font-bold text-slate-900">PRP Injections</h3>
                                 </div>
                                 <p className="text-xs sm:text-sm text-black/80 leading-relaxed mb-6">
                                     Regenerative treatments using Platelet-Rich Plasma (PRP) injections to accelerate healing, restore joint function for arthritis, tendonitis, and sports injuries.
@@ -102,7 +102,7 @@ export default function Services() {
                             </div>
                             <div className="flex flex-wrap gap-2">
                                 <span className="text-[11px] font-medium text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md">Minimally Invasive</span>
-                                <span className="text-[11px] font-medium text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Disc Repair</span>
+                                {/* <span className="text-[11px] font-medium text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Disc Repair</span> */}
                             </div>
                         </div>
 

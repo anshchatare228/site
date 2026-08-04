@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Gallery from "./pages/Gallery";
 import ScrollReveal from './components/ScrollReveal';
+import Photos from './components/Photos';
 import { Scroll } from 'lucide-react';
 
 export default function App() {
@@ -55,6 +56,12 @@ export default function App() {
           <section id="experience">
             <Experience />
           </section>
+
+        <ScrollReveal>
+          <section id="photos">
+            <Photos />
+          </section>
+        </ScrollReveal>
 
         <ScrollReveal>
           <section id="results">

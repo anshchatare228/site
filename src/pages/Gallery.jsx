@@ -156,8 +156,8 @@ const GalleryPage = () => {
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wide text-left cursor-pointer transition-all ${activeFilter === filter.id
-                    ? 'bg-green-700 text-white shadow-sm'
-                    : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-200'
+                  ? 'bg-green-700 text-white shadow-sm'
+                  : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-200'
                   }`}
               >
                 {filter.label}
@@ -241,19 +241,10 @@ const GalleryPage = () => {
             {/* Media Canvas Area */}
             <div className="flex-1 bg-black flex items-center justify-center p-4 overflow-hidden min-h-[300px]">
               {selectedMedia.type === 'video' ? (
-                <video src={selectedMedia.src} controls autoPlay className="max-w-full max-h-[60vh] object-contain rounded-lg" />
+                <video src={selectedMedia.src} controls autoPlay className="max-w-full max-h-[80vh] object-contain rounded-lg" />
               ) : (
-                <img src={selectedMedia.src} alt={selectedMedia.title} className="max-w-full max-h-[60vh] object-contain rounded-lg" />
+                <img src={selectedMedia.src} alt={selectedMedia.title} className="max-w-full max-h-[80vh] object-contain rounded-lg" />
               )}
-            </div>
-
-            {/* Modal Bottom Metadata */}
-            <div className="bg-white p-6 border-t border-gray-100">
-              <span className="text-[10px] font-bold text-green-600 uppercase tracking-widest">
-                Case File Details
-              </span>
-              <h2 className="text-xl font-bold text-gray-900 mt-1">{selectedMedia.title}</h2>
-              <p className="text-gray-600 text-sm mt-1 leading-relaxed">{selectedMedia.desc}</p>
             </div>
 
           </div>

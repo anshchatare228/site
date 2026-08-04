@@ -87,7 +87,7 @@ const Navbar = () => {
           {/* Hamburger Menu Toggle Button */}
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="lg:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500/20" 
+            className="lg:hidden p-2 rounded-md focus:outline-none" 
             aria-label="Toggle menu"
           >
             <div className="w-6 h-5 flex flex-col justify-between relative">

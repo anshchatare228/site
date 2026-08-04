@@ -37,10 +37,10 @@ export default function Contacts() {
             </div>
             <div>
               <span className="text-[13px] font-bold text-slate-400 tracking-wider block uppercase mb-0.5">
-                CLINIC ADDRESS
+                HOSPITAL ADDRESS
               </span>
               <h4 className="font-bold text-slate-900 text-sm md:text-base">
-                Dr. Tungenwar Orthopaedic Clinic
+                SHREE VENKATESHWARA CENTER FOR JOINT REPLACEMENT, ARTHROSCOPY & TRAUMA
               </h4>
               <p className="text-slate-500 text-xs md:text-sm mt-0.5 leading-snug">
                 Shree Venkateshwara Hospital, behind Kothari Complex, Shivaji Nagar, Gokul Nagar, Nanded, Maharashtra 431602
@@ -149,7 +149,7 @@ export default function Contacts() {
         </div>
 
         {/* Right Column: Interactive Consultation Card */}
-        <div className="lg:col-span-7 bg-white border border-slate-100 rounded-3xl shadow-md overflow-hidden flex flex-col justify-between self-stretch">
+        <div className="lg:col-span-7 bg-white border border-slate-100 rounded-3xl shadow-md overflow-hidden flex flex-col self-stretch">
 
           {/* Dynamic Upper Panel Gradient Banner */}
           <div className="bg-gradient-to-r from-[#1E56A0] to-[#167D7F] p-8 text-white">
@@ -166,12 +166,22 @@ export default function Contacts() {
           </div>
 
           {/* Action Trigger Interactive Links Block */}
-          <div className="p-6 md:p-8 space-y-4 flex-grow flex flex-col justify-center">
+          <div className="p-6 md:p-8 space-y-4 flex flex-col justify-center">
+            
+            <div className='flex flex-col justify-between items-center mb-10'>
+              <p className='text-md md:text-3xl font-serif'>
+                Excellence in Orthopaedic Surgery.
+              </p>
+
+              <p className='text-md md:text-3xl font-serif text-blue-700'>
+                Trusted Care, Better Outcomes.
+              </p>
+            </div>
 
             {/* Direct Phone Dial Button Link */}
             <a
               href="tel:+919172000604"
-              className="w-full py-4 px-6 bg-[#1B4E8F] text-white rounded-xl font-bold text-sm md:text-base flex items-center justify-center gap-2 hover:bg-[#153e73] transition shadow-md group"
+              className="w-full py-4 px-6 md:mt-6 bg-[#1B4E8F] text-white rounded-xl font-bold text-sm md:text-base flex items-center justify-center gap-2 hover:bg-[#153e73] transition shadow-md group"
             >
               <Phone className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
               Call +91 9172000604
@@ -190,7 +200,7 @@ export default function Contacts() {
 
           </div>
 
-          {/* Footer Consultation Hospitals Area */}
+          {/* Footer Consultation Hospitals Area
           <div className="p-6 md:p-8 /50 border-t border-slate-100">
             <span className="text-[10px] font-bold text-slate-400 tracking-wider block uppercase mb-3">
               ALSO CONSULTING AT
@@ -203,7 +213,7 @@ export default function Contacts() {
                 Marathwada Superspeciality Hospital
               </span>
             </div>
-          </div>
+          </div> */}
 
         </div>
 

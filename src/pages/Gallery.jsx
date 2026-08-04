@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Eye, Film } from 'lucide-react'; 
+import { useNavigate } from "react-router";
+
+import { ArrowLeft, Eye, Film } from 'lucide-react';
 import google1 from "../assets/google1.jpeg"
 import google2 from "../assets/google2.jpeg"
 import google3 from "../assets/google3.jpeg"
@@ -16,6 +18,7 @@ import clinicalVideo from "../assets/ClinicalVideo.mp4"
 const GalleryPage = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedMedia, setSelectedMedia] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo({
@@ -110,8 +113,8 @@ const GalleryPage = () => {
     },
   ];
 
-  const filteredItems = activeFilter === 'all' 
-    ? mediaItems 
+  const filteredItems = activeFilter === 'all'
+    ? mediaItems
     : mediaItems.filter(item => item.category === activeFilter);
 
   return (
@@ -119,9 +122,13 @@ const GalleryPage = () => {
       {/* 1. Header Back Navigation */}
       <div className="bg-white border-b border-gray-200 sticky top-0 z-40 px-4 py-4 md:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <a href="#home" className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-green-600 transition-colors">
-            <ArrowLeft className="w-4 h-4" /> Back to Website
-          </a>
+          <button
+            onClick={() => navigate(-1)}
+            className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-green-600 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Website
+          </button>
           <span className="text-xs font-semibold text-gray-400 tracking-wider uppercase">Dr. Shubham Tungenwar</span>
         </div>
       </div>
@@ -133,7 +140,7 @@ const GalleryPage = () => {
             Clinical Insights
           </span>
           <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4 tracking-tight leading-tight">
-            Media & Case Study Gallery
+            Gallery
           </h1>
           <p className="text-gray-600 text-sm mt-4 leading-relaxed">
             Welcome to the medical archives. This dedicated space contains a curated selection of patient educational graphics, published press releases, and active surgical insights managed under professional protocols.
@@ -148,11 +155,10 @@ const GalleryPage = () => {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wide text-left cursor-pointer transition-all ${
-                  activeFilter === filter.id 
-                    ? 'bg-green-700 text-white shadow-sm' 
+                className={`px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wide text-left cursor-pointer transition-all ${activeFilter === filter.id
+                    ? 'bg-green-700 text-white shadow-sm'
                     : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-200'
-                }`}
+                  }`}
               >
                 {filter.label}
               </button>
@@ -164,21 +170,20 @@ const GalleryPage = () => {
         <div className="lg:col-span-8">
           <div className="grid sm:grid-cols-2 gap-6">
             {filteredItems.map((item) => (
-              <div 
+              <div
                 key={item.id}
                 onClick={() => setSelectedMedia(item)}
                 className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200/80 hover:shadow-md transition-all duration-300 flex flex-col cursor-pointer"
               >
                 {/* Thumbnail Layer */}
                 <div className="relative aspect-video bg-gray-900 overflow-hidden">
-                  <img 
-                    src={item.src} 
+                  <img
+                    src={item.src}
                     alt={item.title}
-                    className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${
-                      item.isGraphic ? 'blur-md brightness-50' : ''
-                    }`}
+                    className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${item.isGraphic ? 'blur-md brightness-50' : ''
+                      }`}
                   />
-                  
+
                   {/* Icon Overlay Toggles */}
                   <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-colors">
                     {item.type === 'video' ? (
@@ -224,9 +229,9 @@ const GalleryPage = () => {
       {selectedMedia && (
         <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 md:p-8 backdrop-blur-sm">
           <div className="relative w-full max-w-4xl bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex flex-col max-h-[90vh]">
-            
+
             {/* Close Button */}
-            <button 
+            <button
               onClick={() => setSelectedMedia(null)}
               className="absolute top-4 right-4 bg-black/60 hover:bg-black text-white p-2 rounded-full z-50 text-xs font-bold border border-white/10 cursor-pointer transition-colors"
             >

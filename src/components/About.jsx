@@ -30,7 +30,7 @@ export default function About() {
         mr: {
             eyebrow: 'सल्लागार अस्थिव्यंग शल्यचिकित्सक • नांदेड',
             nameLine1: 'डॉ शुभम आर',
-            nameLine2: 'तुंगेणवार',
+            nameLine2: 'तुंगेनवार',
             title: 'सल्लागार ट्रॉमा आणि अस्थिव्यंग शल्यचिकित्सक',
             subtitle: 'आर्थ्रोस्कोपी आणि सांधे प्रत्यारोपण शस्त्रक्रियेतील तज्ज्ञ',
             registration: 'GMC नोंदणीकृत (यूके) | MMC नोंदणी क्रमांक: 2019/04/2112',
@@ -41,7 +41,7 @@ export default function About() {
             surgeries: 'शस्त्रक्रिया',
             yearsExp: 'वर्षांचा अनुभव',
             locationTag: '📍 नांदेड, महाराष्ट्र',
-            cardName: 'डॉ शुभम आर तुंगेणवार',
+            cardName: 'डॉ शुभम आर तुंगेनवार',
             cardBadges: 'MBBS · MS Ortho · DNB · MNAMS · MCh (लिव्हरपूल, यूके)',
             cardSpecialist: 'रोबोटिक सांधे प्रत्यारोपण आणि क्रीडा दुखापत तज्ज्ञ',
             rating: 'रेटिंग',

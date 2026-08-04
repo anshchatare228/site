@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolledPastHero, setIsScrolledPastHero] = useState(false);
   
-  const navItems = ['About', 'Services', 'Experience', 'Gallery', 'Testimonials', 'Contact'];
+  const navItems = ['Home', 'Services', 'Experience', 'Gallery', 'Testimonials', 'Contact'];
 
   useEffect(() => {
     // 1. Target the element right before the white section (usually your Hero section)

@@ -11,7 +11,7 @@ import google8 from "../assets/google8.jpeg"
 import Phamphlet from "../assets/phamphlet.jpeg"
 import Paper from "../assets/paper.jpeg"
 import clinicalImage from "../assets/clinicalImage.jpeg"
-import clinicalVideo from "../assets/clinicalVideo.mp4"
+import clinicalVideo from "../assets/ClinicalVideo.mp4"
 
 const GalleryPage = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -112,7 +112,7 @@ const GalleryPage = () => {
       {/* 1. Header Back Navigation */}
       <div className="bg-white border-b border-gray-200 sticky top-0 z-40 px-4 py-4 md:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <a href="/" className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-green-600 transition-colors">
+          <a href="#about" className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-green-600 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Website
           </a>
           <span className="text-xs font-semibold text-gray-400 tracking-wider uppercase">Dr. Shubham Tungenwar</span>

@@ -120,7 +120,7 @@ export default function Contacts() {
 
               {/* 3. Absolute Action Trigger Redirection Button */}
               <div className="absolute inset-0 flex items-end justify-end">
-                <a
+                <div
                   href="https://www.google.com/maps/place/%E2%9C%85%F0%9D%97%97%F0%9D%97%BF+%F0%9D%97%A6%F0%9D%97%B5%F0%9D%98%82%F0%9D%97%AF%F0%9D%97%B5%F0%9D%97%AE%F0%9D%97%BA+%F0%9D%97%A7%F0%9D%98%82%F0%9D%97%BB%F0%9D%97%B4%F0%9D%97%B2%F0%9D%97%BB%F0%9D%98%84%F0%9D%97%AE%F0%9D%97%BF+-+MS+DNB+Ortho+Dip+SICOT+MCh+Orth+UK+%7C+Joint+Replacement,+Arthroscopy+%26+Sports+Injury+Specialist/@19.1625806,77.304989,495m/data=!3m1!1e3!4m10!1m2!2m1!1stungenwar+orthopedic+clinic!3m6!1s0x3bd1d73bdbf25e7b:0xf9d56c1fd957d21c!8m2!3d19.1626301!4d77.3072922!15sCht0dW5nZW53YXIgb3J0aG9wZWRpYyBjbGluaWNaHSIbdHVuZ2Vud2FyIG9ydGhvcGVkaWMgY2xpbmljkgESb3J0aG9wZWRpY19zdXJnZW9u4AEA!16s%2Fg%2F11xnvn1207?entry=ttu&g_ep=EgoyMDI2MDcyNy4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -132,7 +132,7 @@ export default function Contacts() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                   </svg>
                   Open Directions Link
-                </a>
+                </div>
               </div>
 
               {/* 4. Bottom-Left Location Sub-Badge */}

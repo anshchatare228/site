@@ -42,7 +42,7 @@ export default function App() {
 
       <main className="w-full">
 
-          <section id="about">
+          <section id="home">
             <About />
           </section>
 

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import SVHN from "../assets/SVHN.mp4"
 import DocPhoto from "../assets/docPhoto.png"
 import { MessageSquareDot, PhoneCall, Calendar, Languages } from 'lucide-react';
+import { motion } from "framer-motion";
 
 export default function About() {
     const [lang, setLang] = useState('en'); // 'en' | 'mr'
@@ -107,7 +108,11 @@ export default function About() {
             <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-10">
 
                 {/* Right side*/}
-                <div className="lg:col-span-5 flex flex-col items-center relative w-full lg:order-last mt-7 lg:mt-0">
+                <motion.div initial={{ opacity: 0.5, x: 80 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }} 
+                    className="lg:col-span-5 flex flex-col items-center relative w-full lg:order-last mt-7 lg:mt-0">
 
                     {/* Translate Toggle Button — sits just above the photo */}
 
@@ -145,10 +150,14 @@ export default function About() {
                         </div>
 
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Left Side */}
-                <div className="lg:col-span-7 flex flex-col space-y-6 lg:order-first">
+                <motion.div initial={{ opacity: 0, x: -80 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, ease: "easeOut" }} 
+                    className="lg:col-span-7 flex flex-col space-y-6 lg:order-first">
 
                     <div className="flex items-center gap-2">
                         <span className="h-2 w-2 rounded-full bg-green-600"></span>
@@ -225,7 +234,7 @@ export default function About() {
 
                     </div>
 
-                </div>
+                </motion.div>
 
             </div>
         </section>

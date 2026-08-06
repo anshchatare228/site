@@ -1,5 +1,12 @@
-import React from 'react';
-import { Star, MapPin, Quote, MessageSquarePlus } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import {
+    Star,
+    MapPin,
+    Quote,
+    MessageSquarePlus,
+    ChevronLeft,
+    ChevronRight
+} from 'lucide-react';
 // import Test1 from "../assets/test1.png"
 // import Test2 from "../assets/test2.png"
 // import Test3 from "../assets/test3.png"
@@ -67,96 +74,103 @@ export default function Testimonial() {
             </h2>
 
             {/* Two-column layout: fixed review card (left) + all testimonials (right, own cards) */}
-            <div className="relative grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+            <div className="relative flex flex-col lg:flex-row gap-6">
 
-                {/* Fixed "Leave a review" card */}
-                <div className="lg:col-span-4">
-                    <div className="h-full min-h-[320px] bg-white rounded-3xl shadow-xl shadow-slate-200/60 ring-1 ring-slate-100 overflow-hidden flex flex-col">
-                        <div className="h-1.5 w-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 shrink-0" />
-                        <div className="relative p-6 md:p-10 flex flex-col items-center justify-center text-center flex-1 gap-5">
-                            <div className="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center">
-                                <MessageSquarePlus className="w-8 h-8 text-blue-600" strokeWidth={1.5} />
+    {/* Fixed Review Card */}
+    <div className="lg:w-[360px] lg:flex-shrink-0">
+        <div className="h-full min-h-[320px] bg-white rounded-3xl shadow-xl shadow-slate-200/60 ring-1 ring-slate-100 overflow-hidden flex flex-col sticky lg:top-8">
+            <div className="h-1.5 w-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 shrink-0" />
+
+            <div className="relative p-6 md:p-10 flex flex-col items-center justify-center text-center flex-1 gap-5">
+                <div className="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center">
+                    <MessageSquarePlus className="w-8 h-8 text-blue-600" strokeWidth={1.5} />
+                </div>
+
+                <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-amber-400 fill-amber-400" />
+                    ))}
+                </div>
+
+                <div>
+                    <h3 className="font-serif text-xl md:text-2xl text-[#0F2942] mb-2">
+                        Loved your experience with us?
+                    </h3>
+
+                    <p className="text-slate-500 text-sm md:text-base">
+                        Your feedback helps other patients find the right care. Would you like to leave us a quick review on Google?
+                    </p>
+                </div>
+
+                <a
+                    href={GOOGLE_REVIEW_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-2.5 rounded-full bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-all shadow-md"
+                >
+                    Yes, leave a review
+                </a>
+            </div>
+        </div>
+    </div>
+
+    {/* Horizontal Scroll Testimonials */}
+    <div className="flex-1 overflow-x-auto">
+        <div className="flex gap-6 pb-2 w-max">
+            {testimonials.map((t, idx) => (
+                <div
+                    key={idx}
+                    className="w-[320px] md:w-[360px] bg-white rounded-3xl shadow-lg shadow-slate-200/50 ring-1 ring-slate-100 overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                >
+                    <div className="h-1.5 w-full bg-gradient-to-r from-blue-500 via-blue-600 to-blue-500" />
+
+                    <div className="relative p-6 flex flex-col flex-1">
+                        <Quote
+                            className="absolute top-4 right-5 w-14 h-14 text-blue-50 rotate-180"
+                            strokeWidth={1}
+                            fill="currentColor"
+                        />
+
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-serif font-semibold">
+                                {t.name.charAt(0)}
                             </div>
-                            <div className="flex gap-1">
-                                {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-5 h-5 text-amber-400 fill-amber-400" />
-                                ))}
-                            </div>
+
                             <div>
-                                <h3 className="font-serif text-xl md:text-2xl text-[#0F2942] mb-2">
-                                    Loved your experience with us?
-                                </h3>
-                                <p className="text-slate-500 text-sm md:text-base max-w-md">
-                                    Your feedback helps other patients find the right care. Would you like to leave us a quick review on Google?
+                                <h4 className="font-bold text-slate-900 text-sm">
+                                    {t.name}
+                                </h4>
+
+                                <p className="text-slate-400 text-xs flex items-center gap-1">
+                                    <MapPin className="w-3 h-3" />
+                                    {t.location}
                                 </p>
                             </div>
-                            <a
-                                href={GOOGLE_REVIEW_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="px-6 py-2.5 rounded-full bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 hover:-translate-y-0.5 transition-all shadow-md shadow-blue-200 mt-2"
-                            >
-                                Yes, leave a review
-                            </a>
+                        </div>
+
+                        <span className="inline-block mb-4 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-semibold w-fit">
+                            {t.tag}
+                        </span>
+
+                        <p className="text-slate-700 leading-relaxed text-sm md:text-base flex-1">
+                            “{t.quote}”
+                        </p>
+
+                        <div className="mt-5 pt-4 border-t border-slate-100 flex gap-1">
+                            {[...Array(5)].map((_, i) => (
+                                <Star
+                                    key={i}
+                                    className="w-3.5 h-3.5 text-amber-400 fill-amber-400"
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>
+            ))}
+        </div>
+    </div>
 
-                {/* All testimonials, each its own card, always visible */}
-                <div className="lg:col-span-8">
-                    <div className="grid sm:grid-cols-2 gap-6 h-full">
-                        {testimonials.map((t, idx) => (
-                            <div
-                                key={idx}
-                                className="group relative bg-white rounded-3xl shadow-lg shadow-slate-200/50 ring-1 ring-slate-100 overflow-hidden flex flex-col transition-all duration-300 ease-out hover:shadow-2xl hover:shadow-slate-300/50 hover:-translate-y-1.5 hover:scale-[1.03] hover:z-10 cursor-default"
-                            >
-                                {/* Top accent bar */}
-                                <div className="h-1.5 w-full bg-gradient-to-r from-blue-500 via-blue-600 to-blue-500 shrink-0" />
-
-                                <div className="relative p-6 flex flex-col flex-1">
-                                    {/* Decorative quote glyph */}
-                                    <Quote className="absolute top-4 right-5 w-14 h-14 text-blue-50 rotate-180 pointer-events-none" strokeWidth={1} fill="currentColor" />
-
-                                    {/* Identity row */}
-                                    <div className="flex items-center gap-3 mb-4 relative">
-                                        {/*
-                                        <img
-                                            src={t.avatarImg}
-                                            alt={t.name}
-                                            className="w-10 h-10 rounded-full object-cover border border-slate-100"
-                                        />
-                                        */}
-                                        <div className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center font-serif text-sm font-semibold shrink-0">
-                                            {t.name.charAt(0)}
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-slate-900 text-sm leading-tight">
-                                                {t.name}
-                                            </h4>
-                                            <p className="text-slate-400 text-xs flex items-center gap-1 mt-0.5 font-medium">
-                                                <MapPin className="w-3 h-3 text-slate-400" />
-                                                {t.location}
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    {/* Quote */}
-                                    <p className="relative font-serif text-slate-700 text-sm md:text-base leading-relaxed mb-5 line-clamp-6">
-                                        “{t.quote}”
-                                    </p>
-
-                                    {/* Star Rating pinned to bottom */}
-                                    <div className="mt-auto pt-4 border-t border-slate-100 flex gap-1">
-                                        {[...Array(5)].map((_, i) => (
-                                            <Star key={i} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
+</div>
 
         </section>
     );

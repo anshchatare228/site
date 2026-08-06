@@ -5,3 +5,7 @@ html {
   /* Optional: Prevents header from covering section content titles */
   scroll-padding-top: 80px; 
 }
+
+/* ::-webkit-scrollbar {
+    display: none;
+} */

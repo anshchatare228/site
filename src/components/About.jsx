@@ -72,10 +72,15 @@ export default function About() {
     // Degree abbreviations are kept as-is in both languages (standard practice)
     const medicalBadges = ['MBBS', 'MS Ortho', 'DNB Ortho', 'MNAMS', 'MCh (Liverpool, UK)', 'Dip SICOT(Belgium)'];
 
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.playbackRate = 0.8; // Sets speed to 0.5x
+        }
+    }, []);
+
     return (
         <section className="relative w-full text-white py-18 px-4 sm:px-6 md:py-20 overflow-hidden">
 
-            {/* Video Background Layer */}
             <video
                 ref={videoRef}
                 src={SVHN}
@@ -85,11 +90,11 @@ export default function About() {
                 playsInline
                 preload="auto"
                 disablePictureInPicture
-                className="absolute inset-0 w-full h-full object-cover z-0"
-            ></video>
+                className="absolute hidden sm:block inset-0 w-full h-full object-cover z-0"
+            />
 
             {/* Gradient Overlay for readability/branding on top of video */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0c4095]/50 to-[#1a877f]/85 z-[1]"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0c4095]/80 to-[#1a877f]/85 z-[1]"></div>
 
             <button
                 onClick={() => setLang(lang === 'en' ? 'mr' : 'en')}

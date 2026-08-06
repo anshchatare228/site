@@ -53,24 +53,24 @@ const GalleryPage = () => {
       desc: 'Official medical guide outlining surgical care pathways and patient instructions.',
       src: Phamphlet, // Replace with your Pamphlet image
     },
-    {
-      id: 3,
-      type: 'image',
-      category: 'clinical',
-      title: 'Intraoperative Alignment View',
-      desc: 'Surgical field photo illustrating robotic alignment accuracy.',
-      isGraphic: true,
-      src: clinicalImage
-    },
-    {
-      id: 4,
-      type: 'video',
-      category: 'clinical',
-      title: 'Robotic Joint Resection Footage',
-      desc: 'Live screen feed recorded from the robotic arm console.',
-      isGraphic: true,
-      src: clinicalVideo
-    },
+    // {
+    //   id: 3,
+    //   type: 'image',
+    //   category: 'clinical',
+    //   title: 'Intraoperative Alignment View',
+    //   desc: 'Surgical field photo illustrating robotic alignment accuracy.',
+    //   isGraphic: true,
+    //   src: clinicalImage
+    // },
+    // {
+    //   id: 4,
+    //   type: 'video',
+    //   category: 'clinical',
+    //   title: 'Robotic Joint Resection Footage',
+    //   desc: 'Live screen feed recorded from the robotic arm console.',
+    //   isGraphic: true,
+    //   src: clinicalVideo
+    // },
     {
       id: 5,
       type: 'image',
@@ -133,95 +133,56 @@ const GalleryPage = () => {
         </div>
       </div>
 
-      {/* 2. Hero Split Block (Intro text beside the main category view) */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-16 grid lg:grid-cols-12 gap-12 items-start">
-        <div className="lg:col-span-4 lg:sticky lg:top-24">
-          <span className="text-xs font-bold uppercase tracking-widest text-green-600 bg-green-50 px-3 py-1 rounded-full">
-            Clinical Insights
-          </span>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4 tracking-tight leading-tight">
-            Gallery
-          </h1>
-          <p className="text-gray-600 text-sm mt-4 leading-relaxed">
-            Welcome to the medical archives. This dedicated space contains a curated selection of patient educational graphics, published press releases, and active surgical insights managed under professional protocols.
-          </p>
-          <p className="text-xs text-amber-600 bg-amber-50 border border-amber-200/60 rounded-xl p-3 mt-6 leading-normal font-medium">
-            ⚠️ <strong>Viewer Discretion:</strong> The "Clinical Cases" section contains operating room assets intended solely for scientific documentation and surgical transparency.
-          </p>
+      {/* 2. Title Block */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-16 text-center">
+        <span className="text-xs font-bold uppercase tracking-widest text-green-600 bg-green-50 px-3 py-1 rounded-full">
+          Clinical Insights
+        </span>
+        <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4 tracking-tight leading-tight">
+          Gallery
+        </h1>
+      </div>
 
-          {/* Filter Pills Sidebar */}
-          <div className="flex flex-wrap lg:flex-col gap-2 mt-8 border-t border-gray-200 pt-6">
-            {filters.map(filter => (
-              <button
-                key={filter.id}
-                onClick={() => setActiveFilter(filter.id)}
-                className={`px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wide text-left cursor-pointer transition-all ${activeFilter === filter.id
-                  ? 'bg-green-700 text-white shadow-sm'
-                  : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-200'
-                  }`}
-              >
-                {filter.label}
-              </button>
-            ))}
-          </div>
-        </div>
+      {/* 3. Media Grid (3 columns) */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6">
+          {filteredItems.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => setSelectedMedia(item)}
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200/80 hover:shadow-md transition-all duration-300 cursor-pointer"
+            >
+              {/* Thumbnail Layer */}
+              <div className="relative aspect-square bg-gray-900 overflow-hidden">
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${item.isGraphic ? 'blur-md brightness-50' : ''
+                    }`}
+                />
 
-        {/* 3. Media Presentation Template Grid */}
-        <div className="lg:col-span-8">
-          <div className="grid sm:grid-cols-2 gap-6">
-            {filteredItems.map((item) => (
-              <div
-                key={item.id}
-                onClick={() => setSelectedMedia(item)}
-                className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200/80 hover:shadow-md transition-all duration-300 flex flex-col cursor-pointer"
-              >
-                {/* Thumbnail Layer */}
-                <div className="relative aspect-video bg-gray-900 overflow-hidden">
-                  <img
-                    src={item.src}
-                    alt={item.title}
-                    className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${item.isGraphic ? 'blur-md brightness-50' : ''
-                      }`}
-                  />
-
-                  {/* Icon Overlay Toggles */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-colors">
-                    {item.type === 'video' ? (
-                      <div className="bg-green-600 text-white p-3 rounded-full shadow-lg">
-                        <Film className="w-5 h-5 fill-current" />
-                      </div>
-                    ) : (
-                      <div className="bg-white/90 text-gray-900 p-2.5 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <Eye className="w-4 h-4" />
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Graphic Content Warning Banner */}
-                  {item.isGraphic && (
-                    <div className="absolute bottom-3 left-3 bg-red-600 text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded tracking-wider shadow">
-                      Graphic
+                {/* Icon Overlay Toggles */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-colors">
+                  {item.type === 'video' ? (
+                    <div className="bg-green-600 text-white p-3 rounded-full shadow-lg">
+                      <Film className="w-5 h-5 fill-current" />
+                    </div>
+                  ) : (
+                    <div className="bg-white/90 text-gray-900 p-2.5 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Eye className="w-4 h-4" />
                     </div>
                   )}
                 </div>
 
-                {/* Info Text Meta */}
-                <div className="p-4 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="font-bold text-gray-900 text-base leading-snug group-hover:text-green-700 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-500 text-xs mt-1 leading-relaxed">
-                      {item.desc}
-                    </p>
+                {/* Graphic Content Warning Banner */}
+                {item.isGraphic && (
+                  <div className="absolute bottom-3 left-3 bg-red-600 text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded tracking-wider shadow">
+                    Graphic
                   </div>
-                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-4">
-                    {item.category}
-                  </span>
-                </div>
+                )}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
 

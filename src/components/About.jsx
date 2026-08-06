@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import SVHN from "../assets/SVHN.mp4"
 import DocPhoto from "../assets/docPhoto.png"
 import { MessageSquareDot, PhoneCall, Calendar, Languages } from 'lucide-react';
+import { motion } from "framer-motion";
 
 export default function About() {
     const [lang, setLang] = useState('en'); // 'en' | 'mr'
@@ -72,10 +73,15 @@ export default function About() {
     // Degree abbreviations are kept as-is in both languages (standard practice)
     const medicalBadges = ['MBBS', 'MS Ortho', 'DNB Ortho', 'MNAMS', 'MCh (Liverpool, UK)', 'Dip SICOT(Belgium)'];
 
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.playbackRate = 0.8; // Sets speed to 0.5x
+        }
+    }, []);
+
     return (
         <section className="relative w-full text-white py-18 px-4 sm:px-6 md:py-20 overflow-hidden">
 
-            {/* Video Background Layer */}
             <video
                 ref={videoRef}
                 src={SVHN}
@@ -85,11 +91,11 @@ export default function About() {
                 playsInline
                 preload="auto"
                 disablePictureInPicture
-                className="absolute inset-0 w-full h-full object-cover z-0"
-            ></video>
+                className="absolute hidden sm:block inset-0 w-full h-full object-cover z-0"
+            />
 
             {/* Gradient Overlay for readability/branding on top of video */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0c4095]/50 to-[#1a877f]/85 z-[1]"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0c4095]/80 to-[#1a877f]/85 z-[1]"></div>
 
             <button
                 onClick={() => setLang(lang === 'en' ? 'mr' : 'en')}
@@ -102,7 +108,11 @@ export default function About() {
             <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mt-10">
 
                 {/* Right side*/}
-                <div className="lg:col-span-5 flex flex-col items-center relative w-full lg:order-last mt-7 lg:mt-0">
+                <motion.div initial={{ opacity: 0.5, x: 80 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }} 
+                    className="lg:col-span-5 flex flex-col items-center relative w-full lg:order-last mt-7 lg:mt-0">
 
                     {/* Translate Toggle Button — sits just above the photo */}
 
@@ -140,10 +150,14 @@ export default function About() {
                         </div>
 
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Left Side */}
-                <div className="lg:col-span-7 flex flex-col space-y-6 lg:order-first">
+                <motion.div initial={{ opacity: 0, x: -80 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, ease: "easeOut" }} 
+                    className="lg:col-span-7 flex flex-col space-y-6 lg:order-first">
 
                     <div className="flex items-center gap-2">
                         <span className="h-2 w-2 rounded-full bg-green-600"></span>
@@ -220,7 +234,7 @@ export default function About() {
 
                     </div>
 
-                </div>
+                </motion.div>
 
             </div>
         </section>

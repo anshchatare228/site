@@ -1,5 +1,6 @@
 import React from 'react';
-import { Scissors, Calendar, Heart, Cpu } from 'lucide-react';
+import { Scissors, Calendar, Heart } from 'lucide-react';
+import { motion } from "framer-motion";
 
 export default function Results() {
   const stats = [
@@ -25,7 +26,6 @@ export default function Results() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-[#1E56A0] via-[#167D7F] to-[#29A19C] py-5 px-4 sm:px-6 lg:px-8 text-white font-sans text-center flex flex-col items-center">
-      {/* Header text layout */}
       <div className="max-w-3xl mx-auto mb-12">
         <h2 className="text-3xl md:text-4xl lg:text-5xl tracking-wide font-serif mb-4">
           Results That Speak
@@ -35,36 +35,46 @@ export default function Results() {
         </p>
       </div>
 
-      {/* Numerical statistics metric matrix */}
       <div className="max-w-7xl flex flex-col lg:flex-row justify-center gap-10">
         {stats.map((stat, idx) => (
-          <div 
-            key={idx} 
+          <motion.div
+            key={idx}
+            initial={{
+              opacity: 0,
+              x: idx === 0 ? -80 : idx === 2 ? 80 : 0,
+              y: idx === 1 ? 0 : 0,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              y: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.7,
+              // delay: idx * 0.15,
+              ease: "easeOut",
+            }}
             className="bg-white rounded-3xl p-8 flex flex-col items-center text-center shadow-lg transition-all duration-300 group"
           >
-            {/* Visual Icon Container */}
             <div className="mb-4 p-1 group-hover:scale-80 duration-300">
               {stat.icon}
             </div>
 
-            {/* Core Metrics */}
             <div className="text-slate-900 font-bold text-4xl md:text-5xl tracking-tight mb-2 group-hover:scale-130 duration-300">
               {stat.number}
             </div>
-            
-            <div className='group-hover:scale-80 duration-300'>
-              {/* Decoded Metadata Label */}
+
+            <div className="group-hover:scale-80 duration-300">
               <div className="text-slate-800 font-bold text-sm md:text-base mb-1">
                 {stat.label}
               </div>
 
-              {/* Subtle Auxiliary Subtext */}
-              <div className="text-slate-400 text-xs md:text-sm font-medium leading-snug ">
+              <div className="text-slate-400 text-xs md:text-sm font-medium leading-snug">
                 {stat.subtext}
               </div>
             </div>
-
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

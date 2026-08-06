@@ -1,5 +1,6 @@
 import React from 'react';
 import { Scissors, Activity, Flame, MoveVertical, Cpu, Calendar, PenTool } from 'lucide-react'
+import { motion } from "framer-motion";
 
 export default function Services() {
     return (
@@ -25,7 +26,11 @@ export default function Services() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:col-span-2">
 
-                        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-md hover:scale-102">
+                        <motion.div initial={{ opacity: 0.5, x: -120 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-md hover:scale-102">
                             <div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="text-blue-500">
@@ -43,9 +48,13 @@ export default function Services() {
                                 <span className="text-[11px] font-medium text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Robotic-Assisted</span>
                                 <span className="text-[11px] font-medium text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md">Minimally Invasive</span>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-md hover:scale-102">
+                        <motion.div initial={{ opacity: 0.5, x: -120 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                             className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-md hover:scale-102">
                             <div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="text-emerald-500">
@@ -56,16 +65,20 @@ export default function Services() {
                                     <h3 className="text-lg font-bold text-slate-900">Hip Replacement</h3>
                                 </div>
                                 <p className="text-xs sm:text-sm text-black/80 leading-relaxed mb-6">
-                                     Advanced Direct Anterior and MIS Posterior approach hip replacements with computer navigation for accurate positioning.
+                                    Advanced Direct Anterior and MIS Posterior approach hip replacements with computer navigation for accurate positioning.
                                 </p>
                             </div>
                             <div className="flex flex-wrap gap-2">
                                 <span className="text-[11px] font-medium text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md">Computer-Guided</span>
                                 <span className="text-[11px] font-medium text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Same-Day Discharge</span>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-md hover:scale-102">
+                        <motion.div initial={{ opacity: 0.5, x: -120 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                             className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-md hover:scale-102">
                             <div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="text-orange-500">
@@ -84,9 +97,13 @@ export default function Services() {
                                 <span className="text-[11px] font-medium text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md">Arthroscopy</span>
                                 <span className="text-[11px] font-medium text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Keyhole surgery</span>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-md hover:scale-102">
+                        <motion.div initial={{ opacity: 0.5, x: -120 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between transition duration-300 hover:shadow-md hover:scale-102">
                             <div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="text-purple-500">
@@ -104,7 +121,7 @@ export default function Services() {
                                 <span className="text-[11px] font-medium text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md">Minimally Invasive</span>
                                 {/* <span className="text-[11px] font-medium text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Disc Repair</span> */}
                             </div>
-                        </div>
+                        </motion.div>
 
                     </div>
 

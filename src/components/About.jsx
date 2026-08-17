@@ -40,8 +40,8 @@ export default function About() {
             surgeries: 'Surgeries',
             yearsExp: 'Years Exp.',
             locationTag: '📍 Nanded, MH',
-            cardName: 'Dr. Shubham R. Tungenwar',
-            cardBadges: 'MBBS · MS Ortho · DNB · MNAMS · MCh (Liverpool, UK)',
+            cardName: 'Dr Shubham R Tungenwar',
+            cardBadges: 'MBBS · MS Ortho · DNB · MNAMS · Dip SICOT(Belgium) · MCh (Liverpool, UK)',
             cardSpecialist: 'Robotic Joint Replacement & Sports Injury Specialist',
             rating: 'Rating',
             translateLabel: 'मराठीत वाचा',
@@ -71,7 +71,7 @@ export default function About() {
     const t = content[lang];
 
     // Degree abbreviations are kept as-is in both languages (standard practice)
-    const medicalBadges = ['MBBS', 'MS Ortho', 'DNB Ortho', 'MNAMS', 'MCh (Liverpool, UK)', 'Dip SICOT(Belgium)'];
+    const medicalBadges = ['MBBS', 'MS Ortho', 'DNB Ortho', 'MNAMS' , 'Dip SICOT(Belgium)', 'MCh (Liverpool, UK)'];
 
     useEffect(() => {
         if (videoRef.current) {

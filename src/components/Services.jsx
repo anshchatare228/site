@@ -41,7 +41,7 @@ export default function Services() {
                                     <h3 className="text-lg font-bold text-slate-900">Robotic Knee Replacement</h3>
                                 </div>
                                 <p className="text-xs sm:text-sm text-black/80 leading-relaxed mb-6">
-                                    Total and partial knee replacement using robotic-assisted precision for optimal implant alignment and faster recovery.
+                                    Total and partial knee replacement using top notch CORI robotic-assisted precision for optimal implant alignment and faster recovery.
                                 </p>
                             </div>
                             <div className="flex flex-wrap gap-2">
@@ -93,7 +93,7 @@ export default function Services() {
                                 </p>
                             </div>
                             <div className="flex flex-wrap gap-2">
-                                <span className="text-[11px] font-medium text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md">ACL Repair</span>
+                                <span className="text-[11px] font-medium text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md">ACL Reconstruction</span>
                                 <span className="text-[11px] font-medium text-slate-500 bg-slate-50 px-2.5 py-1 rounded-md">Arthroscopy</span>
                                 <span className="text-[11px] font-medium text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Keyhole surgery</span>
                             </div>

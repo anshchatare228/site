@@ -89,7 +89,7 @@ export default function Services() {
                                     <h3 className="text-lg font-bold text-slate-900">Arthroscopic Surgery of the Knee and Shoulder</h3>
                                 </div>
                                 <p className="text-xs sm:text-sm text-black/80 leading-relaxed mb-6">
-                                    ACL Reconstruction, PCL reconstruction, meniscus repair, Bankart repair, rotator cuff repair, revision ACL reconstruction, and ACL avulsion repair.
+                                        
                                 </p>
                             </div>
                             <div className="flex flex-wrap gap-2">

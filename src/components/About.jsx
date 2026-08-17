@@ -33,7 +33,7 @@ export default function About() {
             title: 'Consultant Trauma & Orthopaedic Surgeon',
             subtitle: 'Specialist in Arthroscopy & Joint Replacement Surgery',
             registration: 'GMC Registered (UK)',
-            description: 'Fellowship-trained from Liverpool, UK — specialising in Hip & Knee Replacement, Robotic Surgery, Arthroscopy & Sports Surgery, and Complex Trauma. Excellence in Orthopaedic Surgery. Trusted Care. Better Outcomes.',
+            description: 'Fellowship-trained from Liverpool, UK — specialising in Hip & Knee Replacement, Robotic Surgery, Arthroscopy & Sports Surgery, and Complex Trauma.',
             callNow: 'Call Now',
             whatsapp: 'WhatsApp',
             appointment: 'Appointment',

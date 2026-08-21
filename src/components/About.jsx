@@ -5,22 +5,17 @@ import { MessageSquareDot, PhoneCall, Calendar, Languages } from 'lucide-react';
 import { motion } from "framer-motion";
 
 export default function About() {
-    const [lang, setLang] = useState('en'); // 'en' | 'mr'
+    const [lang, setLang] = useState('en');
     const videoRef = useRef(null);
 
     useEffect(() => {
         const vid = videoRef.current;
         if (!vid) return;
-        // React's `muted` JSX attribute isn't always applied reliably to <video>,
-        // and browsers block autoplay unless the element is actually muted —
-        // so we set it imperatively and kick off playback ourselves.
         vid.muted = true;
         vid.defaultMuted = true;
         const playPromise = vid.play();
         if (playPromise !== undefined) {
             playPromise.catch(() => {
-                // Autoplay was blocked (e.g. some mobile browsers) — no-op,
-                // video will just show its first frame instead of erroring.
             });
         }
     }, []);
@@ -70,12 +65,11 @@ export default function About() {
 
     const t = content[lang];
 
-    // Degree abbreviations are kept as-is in both languages (standard practice)
     const medicalBadges = ['MBBS', 'MS Ortho', 'DNB Ortho', 'MNAMS' , 'Dip SICOT(Belgium)', 'MCh (Liverpool, UK)'];
 
     useEffect(() => {
         if (videoRef.current) {
-            videoRef.current.playbackRate = 0.8; // Sets speed to 0.5x
+            videoRef.current.playbackRate = 0.8;
         }
     }, []);
 
@@ -94,7 +88,6 @@ export default function About() {
                 className="absolute hidden sm:block inset-0 w-full h-full object-cover z-0"
             />
 
-            {/* Gradient Overlay for readability/branding on top of video */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#0c4095]/80 to-[#1a877f]/85 z-[1]"></div>
 
             <button

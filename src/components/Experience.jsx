@@ -46,7 +46,7 @@ export default function Experience() {
     const recognitions = [
         {
             icon: <Trophy className="w-5 h-5 text-zinc-6700 mt-1 flex-shrink-0" />,
-            title: "SICOT 2022 – Top 10 Global Paper",
+            title: "SICOT International Diploma Award",
             description: 'Awarded International Diploma in Trauma & Orthopaedic Surgery at SICOT World Congress 2023 in Madrid, Spain for excellence in orthopaedic surgery.'
         },
         {

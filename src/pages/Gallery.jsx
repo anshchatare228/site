@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router";
 
-import { ArrowLeft, Eye, Film } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, Eye, Film } from 'lucide-react';
 import google1 from "../assets/google1.jpeg"
 import google2 from "../assets/google2.jpeg"
 import google3 from "../assets/google3.jpeg"
@@ -14,10 +14,20 @@ import Phamphlet from "../assets/phamphlet.jpeg"
 import Paper from "../assets/paper.jpeg"
 import clinicalImage from "../assets/clinicalImage.jpeg"
 import clinicalVideo from "../assets/ClinicalVideo.mp4"
+import img1 from "../assets/IMG_5689.JPG.jpeg"
+import img2 from "../assets/IMG_5999.PNG"
+import img3 from "../assets/img3.jpeg"
+import img4 from "../assets/img4.jpeg"
+import vid1 from "../assets/vid1.mp4"
+import vid2 from "../assets/vid2.mp4"
+import vid3 from "../assets/vid3.mp4"
+import vid4 from "../assets/vid4.mp4"
+
+
 
 const GalleryPage = () => {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [selectedMedia, setSelectedMedia] = useState(null);
+  const [selectedMediaIndex, setSelectedMediaIndex] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -51,7 +61,7 @@ const GalleryPage = () => {
       category: 'educational',
       title: 'Hospital Informational Pamphlet',
       desc: 'Official medical guide outlining surgical care pathways and patient instructions.',
-      src: Phamphlet, // Replace with your Pamphlet image
+      src: Phamphlet,
     },
     // {
     //   id: 3,
@@ -77,7 +87,7 @@ const GalleryPage = () => {
       category: 'educational',
       title: 'Stages of Osteoarthritis Breakdown',
       desc: 'Visual chart illustrating the progressive deterioration of joint spaces.',
-      src: google1, // Replace with your Google pics / charts
+      src: img2,
     },
     {
       id: 6,
@@ -85,7 +95,7 @@ const GalleryPage = () => {
       category: 'educational',
       title: 'Avascular Necrosis Breakdown',
       desc: 'Visual chart illustrating the progressive death of bone tissue in the hip due to lack of blood supply.',
-      src: google2, // Replace with your Google pics / charts
+      src: google2,
     },
     {
       id: 7,
@@ -93,7 +103,7 @@ const GalleryPage = () => {
       category: 'educational',
       title: 'Radiographic Evaluation of the Femoral Head',
       desc: 'X-ray imagery showing advanced structural degradation and flattening of the hip joint.',
-      src: google3, // Replace with your Google pics / charts
+      src: google3,
     },
     {
       id: 8,
@@ -101,7 +111,7 @@ const GalleryPage = () => {
       category: 'educational',
       title: 'Total Hip Arthroplasty Components',
       desc: 'Exploded anatomical diagram showcasing the plastic liner, femoral head, and femoral stem assembly.',
-      src: google4, // Replace with your Google pics / charts
+      src: google4,
     },
     {
       id: 9,
@@ -109,13 +119,99 @@ const GalleryPage = () => {
       category: 'educational',
       title: 'Stages of Osteoarthritis Breakdown',
       desc: 'Visual chart illustrating the progressive deterioration of joint spaces.',
-      src: google5, // Replace with your Google pics / charts
+      src: google5,
     },
+    {
+      id: 10,
+      type: 'image',
+      category: 'educational',
+      title: 'Stages of Osteoarthritis Breakdown',
+      desc: 'Visual chart illustrating the progressive deterioration of joint spaces.',
+      src: img1,
+    },
+    {
+      id: 11,
+      type: 'image',
+      category: 'educational',
+      title: 'Stages of Osteoarthritis Breakdown',
+      desc: 'Visual chart illustrating the progressive deterioration of joint spaces.',
+      src: img3,
+    },
+    {
+      id: 9,
+      type: 'image',
+      category: 'educational',
+      title: 'Stages of Osteoarthritis Breakdown',
+      desc: 'Visual chart illustrating the progressive deterioration of joint spaces.',
+      src: img4,
+    },
+    {
+      id: 9,
+      type: 'image',
+      category: 'educational',
+      title: 'Stages of Osteoarthritis Breakdown',
+      desc: 'Visual chart illustrating the progressive deterioration of joint spaces.',
+      src: google2,
+    },
+    {
+      id: 4,
+      type: 'video',
+      category: 'clinical',
+      title: 'Robotic Joint Resection Footage',
+      desc: 'Live screen feed recorded from the robotic arm console.',
+      isGraphic: false,
+      src: vid1
+    },
+    {
+      id: 4,
+      type: 'video',
+      category: 'clinical',
+      title: 'Robotic Joint Resection Footage',
+      desc: 'Live screen feed recorded from the robotic arm console.',
+      isGraphic: false,
+      src: vid2
+    },
+    {
+      id: 4,
+      type: 'video',
+      category: 'clinical',
+      title: 'Robotic Joint Resection Footage',
+      desc: 'Live screen feed recorded from the robotic arm console.',
+      isGraphic: false,
+      src: vid3
+    },
+    {
+      id: 4,
+      type: 'video',
+      category: 'clinical',
+      title: 'Robotic Joint Resection Footage',
+      desc: 'Live screen feed recorded from the robotic arm console.',
+      isGraphic: false,
+      src: vid4
+    },
+    // {
+    //   id: 9,
+    //   type: 'image',
+    //   category: 'educational',
+    //   title: 'Stages of Osteoarthritis Breakdown',
+    //   desc: 'Visual chart illustrating the progressive deterioration of joint spaces.',
+    //   src: google5,
+    // },
   ];
 
   const filteredItems = activeFilter === 'all'
     ? mediaItems
     : mediaItems.filter(item => item.category === activeFilter);
+  const selectedMedia = selectedMediaIndex === null ? null : filteredItems[selectedMediaIndex];
+
+  const openMedia = (index) => setSelectedMediaIndex(index);
+  const closeMedia = () => setSelectedMediaIndex(null);
+  const showPrevious = () => setSelectedMediaIndex((currentIndex) => (
+    currentIndex === 0 ? filteredItems.length - 1 : currentIndex - 1
+  ));
+  const showNext = () => setSelectedMediaIndex((currentIndex) => (
+    currentIndex === filteredItems.length - 1 ? 0 : currentIndex + 1
+  ));
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900 font-sans pb-24">
@@ -146,26 +242,38 @@ const GalleryPage = () => {
       {/* 3. Media Grid (3 columns) */}
       <div className="max-w-7xl mx-auto px-4 md:px-8 pt-10">
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6">
-          {filteredItems.map((item) => (
+          {filteredItems.map((item, index) => (
             <div
-              key={item.id}
-              onClick={() => setSelectedMedia(item)}
+              key={`${item.id}-${item.src}`}
+              onClick={() => openMedia(index)}
               className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200/80 hover:shadow-md transition-all duration-300 cursor-pointer"
             >
               {/* Thumbnail Layer */}
               <div className="relative aspect-square bg-gray-900 overflow-hidden">
-                <img
-                  src={item.src}
-                  alt={item.title}
-                  className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${item.isGraphic ? 'blur-md brightness-50' : ''
-                    }`}
-                />
+                {item.type === 'video' ? (
+                  <video
+                    src={item.src}
+                    poster={clinicalImage}
+                    muted
+                    playsInline
+                    preload="metadata"
+                    aria-label={item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <img
+                    src={item.src}
+                    alt={item.title}
+                    className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${item.isGraphic ? 'blur-md brightness-50' : ''
+                      }`}
+                  />
+                )}
 
                 {/* Icon Overlay Toggles */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-colors">
                   {item.type === 'video' ? (
                     <div className="bg-green-600 text-white p-3 rounded-full shadow-lg">
-                      <Film className="w-5 h-5 fill-current" />
+                      <Film className="w-5 h-5" />
                     </div>
                   ) : (
                     <div className="bg-white/90 text-gray-900 p-2.5 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -193,10 +301,28 @@ const GalleryPage = () => {
 
             {/* Close Button */}
             <button
-              onClick={() => setSelectedMedia(null)}
+              onClick={closeMedia}
               className="absolute top-4 right-4 bg-black/60 hover:bg-black text-white p-2 rounded-full z-50 text-xs font-bold border border-white/10 cursor-pointer transition-colors"
             >
-              ✕ Close
+              Close
+            </button>
+
+            <button
+              type="button"
+              onClick={showPrevious}
+              aria-label="Show previous media"
+              className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-3 rounded-full z-50 border border-white/10 cursor-pointer transition-colors"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <button
+              type="button"
+              onClick={showNext}
+              aria-label="Show next media"
+              className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black text-white p-3 rounded-full z-50 border border-white/10 cursor-pointer transition-colors"
+            >
+              <ChevronRight className="w-5 h-5" />
             </button>
 
             {/* Media Canvas Area */}

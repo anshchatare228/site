@@ -18,9 +18,9 @@ import img1 from "../assets/IMG_5689.JPG.jpeg"
 import img2 from "../assets/IMG_5999.PNG"
 import img3 from "../assets/img3.jpeg"
 import img4 from "../assets/img4.jpeg"
-import vid1 from "../assets/vid1.mp4"
-import vid2 from "../assets/vid2.mp4"
-import vid3 from "../assets/vid3.mp4"
+import vid1 from "../assets/vid1.MP4"
+import vid2 from "../assets/vid2.MP4"
+import vid3 from "../assets/vid3.MP4"
 import vid4 from "../assets/vid4.mp4"
 
 
